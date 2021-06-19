@@ -4,15 +4,15 @@
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
 
-    <mat-toolbar >TPC</mat-toolbar>
+    <mat-toolbar class="title" >---TPC</mat-toolbar>
     <mat-nav-list >
       <br><br><br>
-      <a  mat-list-item href="#"> Inicio  <span class="default-spacer"></span><mat-icon>home</mat-icon> </a>
-      <a mat-list-item href="#">Mi calendario   <span class="default-spacer"></span><mat-icon>fiber_manual_record  </mat-icon></a>
-      <a mat-list-item href="#">Mis tutorías   <span class="default-spacer"></span><mat-icon>work_outline</mat-icon></a>
-      <a mat-list-item href="#">Mis talleres  <span class="default-spacer"></span><mat-icon>home</mat-icon></a>
-      <a mat-list-item href="#">Mi rendimiento  <span class="default-spacer"></span><mat-icon>account_circle</mat-icon> </a>
-      <a mat-list-item href="#">Configuración  <span class="default-spacer"></span><mat-icon>settings</mat-icon></a>
+      <a  mat-list-item href="#"> Inicio  <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Mi calendario   <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Mis tutorías   <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Mis talleres  <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Mi rendimiento  <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Configuración  <span class="default-spacer"></span></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -20,20 +20,23 @@
       <button
         type="button"
         aria-label="Toggle sidenav"
+        class="background"
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon class="icon" aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="default-spacer"></span>
-      <span >Bienvenido(a) Keiko </span>
-
-      <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
-        <mat-icon>logout</mat-icon>
+      <button mat-icon-button color=""  class="background"aria-label="Example icon button with a heart icon">
+        <mat-icon class="icon">notifications</mat-icon>
       </button>
 
-
+      <button mat-icon-button color="warn" class="background" aria-label="Example icon button with a heart icon">
+        <mat-icon class="icon">person</mat-icon>
+      </button>
     </mat-toolbar>
-    <ng-content></ng-content>
+    <router-outlet></router-outlet>
+    <ng-content>
+    </ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
