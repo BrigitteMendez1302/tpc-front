@@ -9,13 +9,20 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatListModule} from "@angular/material/list";
+import { MatButtonModule } from "@angular/material/button";
 import { ListTutorshipsComponent } from './pages/tutor/list-tutorships/list-tutorships.component';
+import { SeeSpecificWorkshipComponent } from './pages/tutor/see-specific-workship/see-specific-workship.component';
+import { AttendanceComponent } from './pages/tutor/attendance/attendance.component';
+import { MainTutorComponent } from './pages/tutor/main-tutor/main-tutor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavTutorComponent,
-    ListTutorshipsComponent
+    ListTutorshipsComponent,
+    SeeSpecificWorkshipComponent,
+    AttendanceComponent,
+    MainTutorComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,8 @@ import { ListTutorshipsComponent } from './pages/tutor/list-tutorships/list-tuto
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
