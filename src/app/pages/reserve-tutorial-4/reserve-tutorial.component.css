@@ -1,0 +1,22 @@
+.mat-button-toggle {
+  margin-right:40px;
+  margin-left:40px;
+}
+.spacing {
+  margin-left: 25px;
+  margin-top: 15px;
+}
+.g-buttons {
+  margin-top: 55px;
+}
+
+.term {
+  color: white;
+  background: deepskyblue;
+}
+
+.codigos {
+  min-width: 200px;
+  max-width: 300px;
+  width: 100%;
+}

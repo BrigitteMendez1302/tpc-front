@@ -1,0 +1,21 @@
+.mat-button-toggle {
+  margin-right:40px;
+  margin-left:40px;
+}
+.spacing {
+  margin-left: 25px;
+  margin-top: 15px;
+}
+.g-buttons {
+  margin-top: 55px;
+}
+
+.button-cl {
+  width: 328px;
+  height: 47px;
+  color: #1282A2;
+  border-color: #1282A2;
+  border-width: 2px;
+  font-size: 16px;
+  margin-top: 15px;
+}

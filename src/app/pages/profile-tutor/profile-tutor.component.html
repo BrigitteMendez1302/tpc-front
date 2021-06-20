@@ -1,0 +1,50 @@
+<div align="center" class="title">
+  Mi perfil
+</div>
+<div align="center">
+  <mat-card class="profile-card" >
+    <div align="center">
+      <br/>
+      <div mat-card-avatar class="profile-header-image"></div>
+    </div>
+
+    <div class="description" align="left">
+
+      <div>
+        <strong>{{name}}</strong>
+      </div>
+      <br/>
+      <div>
+        Cargo: <br/>
+        {{ cargo }}
+      </div>
+      <br/>
+      <div>
+        Código: <br/>
+        {{ codigo }}
+      </div>
+      <br/>
+      <div>
+        Correo educativo: <br/>
+        {{ correo }}
+      </div>
+      <br/>
+      <div>
+        Campus: <br/>
+        {{ campus }}
+      </div>
+      <br/>
+      <div>
+        Carrera: <br/>
+        {{ carrera }}
+      </div>
+      <br/>
+      Cursos:
+      <mat-list *ngFor="let c of cursos">
+        {{c.seccion}} {{c.name}}
+      </mat-list>
+      <br/>
+    </div>
+  </mat-card>
+</div>
+
