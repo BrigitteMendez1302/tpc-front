@@ -10,10 +10,15 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatListModule} from "@angular/material/list";
 import { MatButtonModule } from "@angular/material/button";
+import {MatTableModule} from '@angular/material/table';
 import { ListTutorshipsComponent } from './pages/tutor/list-tutorships/list-tutorships.component';
 import { SeeSpecificWorkshipComponent } from './pages/tutor/see-specific-workship/see-specific-workship.component';
 import { AttendanceComponent } from './pages/tutor/attendance/attendance.component';
 import { MainTutorComponent } from './pages/tutor/main-tutor/main-tutor.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { LessonStudentsApiService } from './services/lesson-student-api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,9 +37,13 @@ import { MainTutorComponent } from './pages/tutor/main-tutor/main-tutor.componen
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatGridListModule,
+    MatCheckboxModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LessonStudentsApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

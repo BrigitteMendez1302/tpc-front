@@ -1,31 +1,60 @@
-import { Component } from '@angular/core';
+import { SelectionModel } from '@angular/cdk/collections';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { LessonStudent } from '../interfaces/lesson-student.interface';
+import { LessonStudentsApiService } from '../../../services/lesson-student-api.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 @Component({
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
-  styleUrls: ['./attendance.component.css']
+  styleUrls: ['./attendance.component.css'],
+  providers:[LessonStudentsApiService],
 })
-export class AttendanceComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+export class AttendanceComponent implements OnInit{
+  displayedColumns: string[] = ['select', 'id', 'name', 'lastname', 'assistance'];
+  dataSource = new MatTableDataSource<LessonStudent>();
+  selection = new SelectionModel<LessonStudent>(true, []);
+
+  constructor(private lessonStudentsApiService:LessonStudentsApiService) {
+ 
+  }
+
+  getAllStudents(): void {
+    this.lessonStudentsApiService.getAllLessonStudents().subscribe((response: any) => {
+      this.dataSource.data = response;
+    });
+  }
+
+  /**Cuenta el numero de checkboxs en true y lo compara con el numero de rows totales */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  /** Seleccion todas las filas (rows) y tambien deselecciona todas segun el caso */
+  masterToggle() {
+    if (this.isAllSelected()) {
+      this.selection.clear();
+      this.dataSource.data.forEach(row => row.assistance = false);
+    }
+    else {
+      this.dataSource.data.forEach(row => { this.selection.select(row); row.assistance = true });
+    }
+  }
+
+  toggleCheckbox(row: LessonStudent) {
+    this.selection.toggle(row);
+    row.assistance = !row.assistance;
+  }
+
+  //Esto es para marcar los checkboxs si la data viene con true en asistió en algun estudiante
+  ngOnInit() {
+    this.getAllStudents();
+    this.dataSource.data.forEach(p => {
+      if (p.assistance)
+        this.selection.toggle(p);
+    })
+  }
 }

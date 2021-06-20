@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'tutor/:id', component: MainTutorComponent },
   { path: 'tutor/:id/tutorships', component: ListTutorshipsComponent },
   { path: 'tutor/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
-  { path: 'tutor/:id/tutorship/:tutorshipId/attendance', component: AttendanceComponent },
+  { path: 'tutor/:id/tutorships/:tutorshipId/attendance', component: AttendanceComponent },
 ];
 
 @NgModule({

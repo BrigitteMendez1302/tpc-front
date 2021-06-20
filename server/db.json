@@ -1,3 +1,22 @@
 {
-  "hi": "addhere"
+  "LessonStudents":[
+    {
+      "id":1,
+      "name":"Eduardo",
+      "lastname":"Izarra",
+      "assistance":true
+    },
+    {
+      "id":2,
+      "name":"Josue",
+      "lastname":"Olaya",
+      "assistance":true
+    },
+    {
+      "id":3,
+      "name":"Lucas",
+      "lastname":"Moreno",
+      "assistance":true
+    }
+  ]
 }
