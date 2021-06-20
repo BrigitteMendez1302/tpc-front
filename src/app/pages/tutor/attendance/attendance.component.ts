@@ -43,6 +43,7 @@ export class AttendanceComponent implements OnInit{
       this.dataSource.data.forEach(row => { this.selection.select(row); row.assistance = true });
     }
   }
+  
 
   toggleCheckbox(row: LessonStudent) {
     this.selection.toggle(row);
