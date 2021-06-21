@@ -19,6 +19,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LessonStudentsApiService } from './services/lesson-student-api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MainStudentComponent } from './pages/student/main-student/main-student.component';
+import { ReservationComponent } from './pages/student/list-reservations/reservation.component';
+import {MatSelectModule} from '@angular/material/select';
+import { LessonApiService } from './services/lesson-api.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     ListTutorshipsComponent,
     SeeSpecificWorkshipComponent,
     AttendanceComponent,
-    MainTutorComponent
+    MainTutorComponent,
+    MainStudentComponent,
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +47,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatGridListModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
-  providers: [LessonStudentsApiService],
+  providers: [LessonStudentsApiService,LessonApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,49 @@
+<div>
+    <div class="container">
+      <div class="greeting">
+        <div>
+          <h1 style="font-weight: 900; font-size:40px;">Mis Reservas</h1>
+        </div>
+      </div>
+    <div class="combobox-elements">
+      <mat-form-field appearance="outline" >
+        <mat-label>Elige un curso</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.course">
+            {{reservation.course}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Elige un tutor</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.tutor">
+            {{reservation.tutor}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Elige un tipo de clase</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.lessonType">
+            {{reservation.lessonType}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+      <div class="list-reservations">
+        <h2>Lunes 13 de Junio</h2>
+        <mat-list role="list" *ngFor="let reservation of listLessons">
+          <mat-list-item class="m-list-item" role="listitem">
+            <div class="flex">
+              <h3>{{reservation.course}}</h3>
+              <h3>{{reservation.tutor}}</h3>
+              <h3>{{reservation .lessonType}}</h3>
+              <a mat-button class="mat-button-text btn" color="primary" >Detalles</a>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </div>
+  

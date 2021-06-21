@@ -18,5 +18,32 @@
       "lastname":"Moreno",
       "assistance":true
     }
+  ],
+  "lesson":[
+    {
+    "course":"Programacion 1",
+    "tutor":"Josue Uribe",
+    "lessonType":"Taller"
+    },
+    {
+      "course":"Programacion 2",
+      "tutor":"Lucas Moreno",
+      "lessonType":"Tutoria"
+    },
+    {
+      "course":"Calculo 1",
+      "tutor":"Briggite",
+      "lessonType":"Tutoria"
+    },
+    {
+      "course":"Fisica 3",
+      "tutor":"Manuel Ramos",
+      "lessonType":"Taller"
+    },
+    {
+      "course":"Quimica 2",
+      "tutor":"Josue Chauca",
+      "lessonType":"Taller"
+    }
   ]
 }

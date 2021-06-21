@@ -1,0 +1,40 @@
+  .container{
+    margin: 40px 40px 0px 40px;
+  }
+  .greeting{
+    padding: 40px;
+    background-color: rgba(3, 64, 120, .19);
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .m-list-item{
+    margin-top: 4px;
+    background-color: #F3F9FA;
+  }
+  .container{
+    margin: 30px;
+  }
+  .default-spacer {
+    flex: 1 1 auto;
+  }
+  .flex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  h3{
+    margin: 0px;
+  }
+  .btn{
+    background-color: white;
+    color: #1282A2;
+    border: 1px solid #1282A2;
+  }
+  .combobox-elements{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
