@@ -10,14 +10,17 @@
 }
 .flex{
   width: 100%;
-  display: flex;
+  display: inline-grid;
+  grid-template-columns: 30% 30% 30%;
   justify-content: space-between;
 }
 h3{
   margin: 0px;
 }
 .btn{
+  justify-self: center;
   background-color: white;
   color: #1282A2;
   border: 1px solid #1282A2;
+  width: 60%;
 }
