@@ -11,16 +11,16 @@ import {PerformanceComponent} from "./pages/tutor/performance/performance.compon
 import {ListWorkshopsStudentComponent} from "./pages/student/list-workshops-student/list-workshops-student.component";
 
 const routes: Routes = [
-  {path:'tutors/:id', component: MainTutorComponent },
-  { path: 'tutors/:id/tutorships', component: ListTutorshipsComponent },
-  { path: 'tutors/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
-  //{ path: 'tutors/:id/tutorship/:tutorshipId/attendance', component: AttendanceComponent },
+  {path:'tutor/:id', component: MainTutorComponent },
+  { path: 'tutor/:id/tutorships', component: ListTutorshipsComponent },
+  { path: 'tutor/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
+  //{ path: 'tutor/:id/tutorship/:tutorshipId/attendance', component: AttendanceComponent },
   { path:'coordinator/:id/lessons/:lessonId/reports/options/seecomments', component: SeeLessonCommentsComponent},
   { path:'coordinator/:id/lessons/:lessonId/reports/options/seecomments/:studentId', component: SeeSpecificLessonCommentComponent},
   { path:'coordinator/:id/lessons/:lessonId/reports/options', component: SeeLessonOptionsComponent},
-  { path: 'coordinators/:id/main', component: MainContentComponent },
-  {path:'tutors/:id/performance', component: PerformanceComponent},
-  {path:'students/:id/workshops/new', component: ListWorkshopsStudentComponent},
+  { path: 'coordinator/:id/main', component: MainContentComponent },
+  {path:'tutor/:id/performance', component: PerformanceComponent},
+  {path:'student/:id/workshops/new', component: ListWorkshopsStudentComponent},
 ];
 
 //Added some routes
