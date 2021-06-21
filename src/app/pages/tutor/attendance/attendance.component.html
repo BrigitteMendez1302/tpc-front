@@ -1,0 +1,63 @@
+<h1 style="margin-left: 5%;margin-top: 5%;">
+  Asistencia de los estudiantes
+  <mat-icon aria-hidden="false" aria-label="Example home icon" class="margin:5px">people_alt</mat-icon>
+</h1>
+
+<!-- <mat-grid-list cols="12" rowHeight="1:1">
+  <mat-grid-tile>1</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+
+</mat-grid-list> -->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? toggleCheckbox(row) : null"
+                    [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <!-- position column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- name column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- lastname column -->
+  <ng-container matColumnDef="lastname">
+    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+    <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+  </ng-container>
+
+  <!-- Assistance column -->
+  <ng-container matColumnDef="assistance">
+    <th mat-header-cell *matHeaderCellDef> Asistió </th>
+    <td mat-cell *matCellDef="let element"> {{element.assistance}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+      (click)="toggleCheckbox(row)"></tr>
+</table>
+
+
+

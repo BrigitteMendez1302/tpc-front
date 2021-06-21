@@ -1,3 +1,206 @@
 {
-  "hi": "addhere"
+  "LessonStudents":[
+    {
+      "id":1,
+      "name":"Eduardo",
+      "lastname":"Izarra",
+
+      "assistance":true
+    },
+    {
+      "id":2,
+      "name":"Josue",
+      "lastname":"Olaya",
+      "assistance":true
+    },
+    {
+      "id":3,
+      "name":"Lucas",
+      "lastname":"Moreno",
+      "assistance":true
+    }
+  ],
+
+ "User": [
+   {
+     "id": 1,
+     "firstname": "Jessica",
+     "lastname": "Fernandez",
+     "mail": "Jessica@gmail.com",
+     "phone": "920223307"
+
+   },
+   {
+     "id": 2,
+     "firstname": "Carolina",
+     "lastname": "Villegas",
+     "mail": "carol.vi28@gmail.com",
+     "phone": "920236307"
+
+   },
+   {
+     "id": 3,
+     "firstname": "Estefani",
+     "lastname": "Guzman",
+     "mail": "Estefani@gmail.com",
+     "phone": "920236307"
+
+   },
+   {
+     "id": 4,
+     "firstname": "Felix",
+     "lastname": "Sifuentes",
+     "mail": "Felix@gmail.com",
+     "phone": "921236307"
+
+   }
+ ],
+
+  "Tutor": [
+    {
+      "id": 1,
+      "firstname": "Carolina",
+      "code": "U201123423",
+      "lastname": "Villegas",
+      "mail": "carol.vi28@gmail.com",
+      "phone": "920236307"
+    },
+
+    {
+
+        "id": 2,
+        "firstname": "Estefani",
+        "code": "U201123129",
+        "lastname": "Guzman",
+        "mail": "Estefani@gmail.com",
+        "phone": "920236307"
+
+      },
+
+    {
+      "id": 3,
+      "firstname": "Jessica",
+      "lastname": "Fernandez",
+      "code": "U201122129",
+      "mail": "Jessica@gmail.com",
+      "phone": "920223307"
+
+    }
+  ,
+
+    {
+
+      "id": 4,
+      "firstname": "Felix",
+      "lastname": "Sifuentes",
+      "code": "U206123127",
+      "mail": "Felix@gmail.com",
+      "phone": "921236307"
+    }
+
+  ],
+
+  "Coordinator": [
+
+     {
+        "id": 3,
+        "firstname": "Jessica",
+        "lastname": "Fernandez",
+        "mail": "Jessica@gmail.com",
+        "phone": "920223307"
+
+      }
+    ,
+
+    {
+
+        "id": 4,
+        "firstname": "Felix",
+        "lastname": "Sifuentes",
+        "mail": "Felix@gmail.com",
+        "phone": "921236307"
+      }
+
+
+  ],
+
+
+  "Training": [
+    {
+      "id": 1,
+      "coordinatorId": 1
+
+    },
+    {
+      "id": 2,
+      "coordinatorId": 2
+
+    }
+  ],
+
+  "TrainingTutors": [
+
+    {
+      "id": 1,
+      "tutorId":7,
+      "trainingId":2,
+      "assistance": false
+    },
+
+    {
+      "id": 2,
+      "tutorId":6,
+      "trainingId":1,
+      "assistance": false
+    }
+  ],
+
+
+
+  "Students": [
+    {
+      "id": 1,
+      "firstname": "Maria",
+      "code": "U201123423",
+      "lastname": "Suarez",
+      "mail": "Maria@gmail.com",
+      "phone": "920236307"
+    },
+
+    {
+
+      "id": 2,
+      "firstname": "Marianela",
+      "code": "U201123129",
+      "lastname": "Martinez",
+      "mail": "Marianela@gmail.com",
+      "phone": "920236307"
+
+    },
+
+    {
+      "id": 3,
+      "firstname": "Juan",
+      "lastname": "Sandoval",
+      "code": "U201122129",
+      "mail": "Juan@gmail.com",
+      "phone": "920223307"
+
+    }
+  ,
+
+    {
+
+      "id": 4,
+      "firstname": "Pedro",
+      "lastname": "Gonazles",
+      "code": "U206123127",
+      "mail": "Pedro@gmail.com",
+      "phone": "921236307"
+    }
+
+  ]
 }
+
+
+

@@ -1,0 +1,35 @@
+table {
+  width: 90%;
+  margin: 2.5% 5% 5% 5%;
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
+.m-list-item{
+  margin-top: 8px;
+  background-color: #F3F9FA;
+}
+.container{
+  margin: 2.5% 5% 5% 5%;
+  background: #F3F9FA;
+}
+.default-spacer {
+  flex: 1 1 auto;
+}
+.flex{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+h3{
+  margin: 0px;
+}
+.btn{
+  background-color: white;
+  color: #1282A2;
+  border: 1px solid #1282A2;
+}
+
+
+

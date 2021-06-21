@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+
+    <mat-toolbar class="title" >---TPC</mat-toolbar>
+    <mat-nav-list >
+      <br><br><br>
+      <a class="subtitulo" > Principal </a>
+      <br><br><br>
+
+      <a  mat-list-item href="#"> Inicio  <span class="default-spacer"></span></a>
+      <a mat-list-item routerLink="coordinator/:id/tutorships/:tutorshipId/assitance" (click)="drawer.toggle()">Gestionar mis horarios   <span class="default-spacer"></span></a>
+      <a mat-list-item routerLink="coordinator/:id/trainings" (click)="drawer.toggle()"> Programar horarios   <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Ver reportes <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Enviar correo <span class="default-spacer"></span></a>
+      <br><br><br>
+      <a class="subtitulo">Consultas</a>
+      <br>
+      <br>
+      <a mat-list-item href="#">Guia de usuario  <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Preguntas frecuentes  <span class="default-spacer"></span></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar >
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        class="background"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon class="icon" aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="default-spacer"></span>
+      <button mat-icon-button color=""  class="background"aria-label="Example icon button with a heart icon">
+        <mat-icon class="icon">notifications</mat-icon>
+      </button>
+
+      <button mat-icon-button color="warn" class="background" aria-label="Example icon button with a heart icon">
+        <mat-icon class="icon">person</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <ng-content>
+    </ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

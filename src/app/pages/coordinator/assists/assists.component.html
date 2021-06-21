@@ -1,0 +1,29 @@
+<h1 style="margin-left: 5%;margin-top: 5%;">
+ Asistencia
+
+</h1>
+
+<table mat-table  [dataSource]="dataSource"    class="mat-elevation-z8">
+
+  <!-- position column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element" > {{element.firstname +" "+ element.lastname}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="code">
+    <th mat-header-cell *matHeaderCellDef> Codigo </th>
+    <td mat-cell *matCellDef="let element"> {{ element.code}} </td>
+  </ng-container>
+  <!-- name column -->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+</table>
+
+
+<mat-button-toggle class="btn" routerLink="/coordinator/:id/trainings/tutors" routerLinkActive="active">Cancelar</mat-button-toggle>
+<mat-button-toggle class="btn" routerLink="/" routerLinkActive="active">Guardar</mat-button-toggle>
+<mat-button-toggle class="btn" routerLink="/" routerLinkActive="active">Publicar</mat-button-toggle>
+
+
