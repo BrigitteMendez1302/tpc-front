@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <h3 style="font-weight: normal" align="center">¿Desea inscribirse en este taller?</h3>
+  <p>Detalles:</p>
+  <div class="container-1">
+    {{ workshopInfo }}
+  </div>
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-stroked-button color="white" class="btn-principal" (click)="onClickNO()">Denegar</button>
+  <button mat-stroked-button color="white" class="btn-principal" [mat-dialog-close]="true">Confirmar</button>
+</div>

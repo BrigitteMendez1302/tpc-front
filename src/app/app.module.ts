@@ -18,6 +18,16 @@ import { SeeSpecificLessonCommentComponent } from './pages/coordinator/see-speci
 import { SeeLessonOptionsComponent } from './pages/coordinator/see-lesson-options/see-lesson-options.component';
 import {TutorApiService} from "./services/tutor-api.service";
 import {HttpClientModule} from "@angular/common/http";
+import { MainContentComponent } from './pages/coordinator/main-content/main-content.component';
+import { ListWorkshopsStudentComponent } from './pages/student/list-workshops-student/list-workshops-student.component';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSelectModule } from "@angular/material/select";
+import { MatDialogModule } from "@angular/material/dialog";
+import { ConfirmDialogComponent } from './pages/student/confirm-dialog/confirm-dialog.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { PerformanceComponent } from './pages/tutor/performance/performance.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+
 
 @NgModule({
   declarations: [
@@ -29,7 +39,11 @@ import {HttpClientModule} from "@angular/common/http";
     MainTutorComponent,
     SeeLessonCommentsComponent,
     SeeSpecificLessonCommentComponent,
-    SeeLessonOptionsComponent
+    SeeLessonOptionsComponent,
+    MainContentComponent,
+    ListWorkshopsStudentComponent,
+    ConfirmDialogComponent,
+    PerformanceComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,9 +54,15 @@ import {HttpClientModule} from "@angular/common/http";
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
   providers: [TutorApiService],
+  entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

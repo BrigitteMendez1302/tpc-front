@@ -1,0 +1,23 @@
+.container {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.list-principal{
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #F3F9FA;
+}
+.btn-principal{
+  background-color: white;
+  font-weight: lighter;
+  color: #1282A2;
+  border-color:#1282A2;
+}
+.main-container {
+  padding: 1rem;
+}
+::ng-deep .success{
+  background: #5ECA69;
+  color: white;
+}
