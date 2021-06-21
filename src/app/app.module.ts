@@ -9,6 +9,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatListModule} from "@angular/material/list";
 import { MatButtonModule } from "@angular/material/button";
+import {MatTableModule} from '@angular/material/table';
 import { ListTutorshipsComponent } from './pages/tutor/list-tutorships/list-tutorships.component';
 import { SeeSpecificWorkshipComponent } from './pages/tutor/see-specific-workship/see-specific-workship.component';
 //import { AttendanceComponent } from './pages/tutor/attendance/attendance.component';
@@ -27,6 +28,13 @@ import { ConfirmDialogComponent } from './pages/student/confirm-dialog/confirm-d
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { PerformanceComponent } from './pages/tutor/performance/performance.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { ReservationComponent } from './pages/student/list-reservations/reservation.component';
+import { MainStudentComponent } from './pages/student/main-student/main-student.component';
+import { LessonStudentsApiService } from './services/lesson-student-api.service';
+import { LessonApiService } from './services/lesson-api.service';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {AttendanceComponent} from "./pages/tutor/attendance/attendance.component";
 
 
 @NgModule({
@@ -44,6 +52,10 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     ListWorkshopsStudentComponent,
     ConfirmDialogComponent,
     PerformanceComponent,
+    AttendanceComponent,
+    MainTutorComponent,
+    MainStudentComponent,
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,8 +72,13 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatDialogModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatTableModule,
+    MatGridListModule,
+    MatCheckboxModule,
+    HttpClientModule,
+    MatSelectModule
   ],
-  providers: [TutorApiService],
+  providers: [TutorApiService, LessonStudentsApiService, LessonApiService],
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })

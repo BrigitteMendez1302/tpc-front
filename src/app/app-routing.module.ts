@@ -9,9 +9,12 @@ import {SeeLessonOptionsComponent} from "./pages/coordinator/see-lesson-options/
 import {MainContentComponent} from "./pages/coordinator/main-content/main-content.component";
 import {PerformanceComponent} from "./pages/tutor/performance/performance.component";
 import {ListWorkshopsStudentComponent} from "./pages/student/list-workshops-student/list-workshops-student.component";
+import {MainStudentComponent} from "./pages/student/main-student/main-student.component"
+import {ReservationComponent} from "./pages/student/list-reservations/reservation.component"
+import {AttendanceComponent} from "./pages/tutor/attendance/attendance.component";
 
 const routes: Routes = [
-  {path:'tutor/:id', component: MainTutorComponent },
+  { path: 'tutor/:id', component: MainTutorComponent },
   { path: 'tutor/:id/tutorships', component: ListTutorshipsComponent },
   { path: 'tutor/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
   //{ path: 'tutor/:id/tutorship/:tutorshipId/attendance', component: AttendanceComponent },
@@ -19,8 +22,11 @@ const routes: Routes = [
   { path:'coordinator/:id/lessons/:lessonId/reports/options/seecomments/:studentId', component: SeeSpecificLessonCommentComponent},
   { path:'coordinator/:id/lessons/:lessonId/reports/options', component: SeeLessonOptionsComponent},
   { path: 'coordinator/:id/main', component: MainContentComponent },
-  {path:'tutor/:id/performance', component: PerformanceComponent},
-  {path:'student/:id/workshops/new', component: ListWorkshopsStudentComponent},
+  { path:'tutor/:id/performance', component: PerformanceComponent},
+  { path:'student/:id/workshops/new', component: ListWorkshopsStudentComponent},
+  { path: 'tutor/:id/tutorships/:tutorshipId/attendance', component: AttendanceComponent },
+  { path: 'student/:id',component:MainStudentComponent},
+  { path: 'student/:id/reservations', component: ReservationComponent},
 ];
 
 //Added some routes
@@ -28,4 +34,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+ }
