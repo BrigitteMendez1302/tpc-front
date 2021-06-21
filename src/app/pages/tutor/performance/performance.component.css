@@ -1,0 +1,19 @@
+.container {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #F3F9FA;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.sub-container{
+  width: 50%;
+}
+.btn-principal{
+  background-color: transparent;
+  font-weight: normal;
+  color: #1282A2;
+}
+.main-container {
+  padding: 1rem;
+}
