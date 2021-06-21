@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'students/:id/workshops/new', component: ListWorkshopsStudentComponent},
 
 ];
-
+//Added some routes
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
