@@ -55,6 +55,12 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { AssistsComponent } from './pages/coordinator/assists/assists.component';
+import { MainNavCoordinatorComponent } from './pages/coordinator/main-nav-coordinator/main-nav-coordinator.component';
+import { OrganizetrainingComponent } from './pages/coordinator/organizetraining/organizetraining.component';
+import { OrganizeTrainingSelectGuestsComponent } from './pages/coordinator/organize-training-select-guests/organize-training-select-guests.component';
+import { ModifytrainingComponent } from './pages/coordinator/modifytraining/modifytraining.component';
+import {CoordinatorComponent} from "./pages/coordinator/coordinator/coordinator.component";
 
 @NgModule({
   declarations: [
@@ -86,12 +92,20 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     AddScheduleComponent2,
     EditScheduleComponent,
     AddScheduleComponent3,
-    ListTutorshipsComponent
+    ListTutorshipsComponent,
+    MainTutorComponent,
+    AssistsComponent,
+    MainNavCoordinatorComponent,
+    OrganizetrainingComponent,
+    OrganizeTrainingSelectGuestsComponent,
+    CoordinatorComponent,
+    ModifytrainingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatIconModule,
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
@@ -124,7 +138,14 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MatListModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatButtonToggleModule
   ],
   providers: [TutorApiService, LessonStudentsApiService, LessonApiService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   entryComponents: [ConfirmDialogComponent],

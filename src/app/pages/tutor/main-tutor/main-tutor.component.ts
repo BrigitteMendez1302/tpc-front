@@ -10,7 +10,6 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./main-tutor.component.css']
 })
 export class MainTutorComponent implements OnInit {
-
   tutorData: {};
   constructor(private tutorsApi: TutorApiService, private router: Router, private route: ActivatedRoute) {
     this.tutorData = {};

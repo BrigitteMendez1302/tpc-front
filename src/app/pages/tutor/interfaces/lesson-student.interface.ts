@@ -3,4 +3,6 @@ export interface LessonStudent {
     name: string;
     lastname: string;
     assistance: boolean;
-} 
+    enter: Date,
+    end:  Date,
+}

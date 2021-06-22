@@ -23,16 +23,17 @@ import {AddScheduleComponent1} from "./pages/add-schedule-1/add-schedule.compone
 import {AddScheduleComponent3} from "./pages/add-schedule-3/add-schedule.component";
 import {EditScheduleComponent} from "./pages/edit-schedule/edit-schedule.component";
 import {AddScheduleComponent2} from "./pages/add-schedule-2/add-schedule.component";
-
+import {AssistsComponent} from "./pages/coordinator/assists/assists.component";
+import {OrganizetrainingComponent} from "./pages/coordinator/organizetraining/organizetraining.component";
+import {OrganizeTrainingSelectGuestsComponent} from "./pages/coordinator/organize-training-select-guests/organize-training-select-guests.component";
+import {ModifytrainingComponent} from "./pages/coordinator/modifytraining/modifytraining.component";
 
 const routes: Routes = [
   { path: 'tutor/:id', component: MainTutorComponent },
   { path: 'tutor/:id/tutorships', component: ListTutorshipsComponent },
   { path: 'tutor/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
   //{ path: 'tutor/:id/tutorship/:tutorshipId/attendance', component: AttendanceComponent },
-  { path:'coordinator/:id/lessons/:lessonId/reports/options/seecomments', component: SeeLessonCommentsComponent},
-  { path:'coordinator/:id/lessons/:lessonId/reports/options/seecomments/:studentId', component: SeeSpecificLessonCommentComponent},
-  { path:'coordinator/:id/lessons/:lessonId/reports/options', component: SeeLessonOptionsComponent},
+  //{ path:'coordinator/:id/lessons/:lessonId/reports/options', component: SeeLessonOptionsComponent},
   { path: 'coordinator/:id/main', component: MainContentComponent },
   { path:'tutor/:id/performance', component: PerformanceComponent},
   { path:'student/:id/workshops/new', component: ListWorkshopsStudentComponent},
@@ -50,6 +51,12 @@ const routes: Routes = [
   { path: 'coordinator/:id/schedule/options', component: AddScheduleComponent2 },
   { path: 'coordinator/:id/schedule/options/add', component: AddScheduleComponent3 },
   { path: 'coordinator/:id/schedule/options/edit', component: EditScheduleComponent },
+  { path: 'coordinator/:id/management/lessons/:lessonId/attendance', component: AssistsComponent },
+  { path: 'coordinator/:id/management/trainings/:trainingId/edit', component: ModifytrainingComponent },
+  { path: 'coordinator/:id/schedule/trainings/new', component: OrganizetrainingComponent },
+  { path: 'coordinator/:id/schedule/trainings/new/guests', component: OrganizeTrainingSelectGuestsComponent },
+  { path:'coordinator/:id/management/lessons/:lessonId/comments', component: SeeLessonCommentsComponent},
+  { path:'coordinator/:id/management/lessons/:lessonId/comments/:commentId', component: SeeSpecificLessonCommentComponent},
 ]
 
 

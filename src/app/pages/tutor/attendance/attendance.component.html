@@ -1,5 +1,5 @@
 <h1 style="margin-left: 5%;margin-top: 5%;">
-  Asistencia de los estudiantes 
+  Asistencia de los estudiantes
   <mat-icon aria-hidden="false" aria-label="Example home icon" class="margin:5px">people_alt</mat-icon>
 </h1>
 
@@ -8,7 +8,11 @@
   <mat-grid-tile>2</mat-grid-tile>
   <mat-grid-tile>3</mat-grid-tile>
   <mat-grid-tile>4</mat-grid-tile>
-  
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> feature/components-lucas
 </mat-grid-list> -->
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -21,7 +25,6 @@
                     [indeterminate]="selection.hasValue() && !isAllSelected()">
       </mat-checkbox>
     </th>
-    
     <td mat-cell *matCellDef="let row">
       <mat-checkbox (click)="$event.stopPropagation()"
                     (change)="$event ? toggleCheckbox(row) : null"
@@ -46,6 +49,7 @@
   <ng-container matColumnDef="lastname">
     <th mat-header-cell *matHeaderCellDef> Apellido </th>
     <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+<!--    <td mat-cell *matCellDef="let element"> {{element.code}} </td>-->
   </ng-container>
 
   <!-- Assistance column -->
@@ -57,7 +61,4 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"
       (click)="toggleCheckbox(row)"></tr>
-</table> 
-
-
-
+</table>
