@@ -1,0 +1,67 @@
+.btn-b {
+  margin-left: 15px;
+  border-color: white;
+}
+
+.title {
+  font-family: Roboto;
+  font-style: normal;
+  line-height: 41px;
+  margin-left: 75px;
+}
+
+.mat-form-field {
+  display: inline-block;
+  text-align: left;
+  width: 250px;
+}
+
+.lbl {
+  display: inline-block;
+  width: 155px;
+  text-align: left;
+}
+
+.mat-card {
+  background: #F3F9FA;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+.s-schedule {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+::ng-deep ngx-material-timepicker-content {
+  --body-background-color: #fff;
+  --primary-font-family: 'Roboto',sans-serif;
+  --button-color: rgba(3, 64, 120, 0.83) !important;
+  --dial-active-color: #fff;
+  --dial-inactive-color: rgba(255, 255, 255, .5);
+  --dial-background-color: rgba(3, 64, 120, 0.83) !important;
+  --dial-editable-active-color: rgba(3, 64, 120, 0.83) !important;
+  --dial-editable-background-color: #fff;
+  --clock-face-time-active-color: #fff;
+  --clock-face-time-inactive-color: #6c6c6c;
+  --clock-face-inner-time-inactive-color: #929292;
+  --clock-face-time-disabled-color: #c5c5c5;
+  --clock-face-background-color: #f0f0f0;
+  --clock-hand-color: rgba(3, 64, 120, 0.83) !important;
+}
+
+.mat-button-toggle {
+  border-color: #1282A2;
+  color: #1282A2;
+  margin-left: 10px;
+}
+
+.der-button{
+  margin-right: 75px;
+}
+
+.btn-below {
+  margin-top: 15px;
+}
+
+

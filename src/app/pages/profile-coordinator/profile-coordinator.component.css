@@ -1,0 +1,43 @@
+.profile-card {
+  max-width: 400px;
+  background: rgba(3, 64, 120, 0.19);
+  border-radius: 25px;
+}
+
+.profile-header-image {
+  background-image: url('src/assets/coordinator.png');
+  width: 214px;
+  height: 214px;
+  position: center;
+}
+
+.nombre {
+  color: black;
+}
+
+.description {
+  margin-left: 35px;
+  margin-top: 15px;
+  right: -35.55%;
+  top: 0%;
+  bottom: 8.89%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+}

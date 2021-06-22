@@ -1,0 +1,40 @@
+<h1 class="spacing">Encuentra tu tutoría ideal</h1>
+<div align="center">
+  <h2>Selecciona modalidad</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Selecciona modalidad</mat-label>
+    <select [(ngModel)]="value"
+            matNativeControl required>
+      <option></option>
+      <option value="1">Individual</option>
+      <option value="2">Grupal</option>
+    </select>
+  </mat-form-field>
+  <div *ngIf="value == '2'">
+    <div align="center">
+      <mat-form-field class="codigos">
+        <mat-label>Ingrese el código del primer acompañante</mat-label>
+        <input matInput type="text" [(ngModel)]="codigo1">
+        <button *ngIf="codigo1" matSuffix mat-icon-button aria-label="Clear" (click)="codigo1=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div align="center">
+      <mat-form-field class="codigos">
+        <mat-label>Ingrese el código del segundo acompañante</mat-label>
+        <input matInput type="text" [(ngModel)]="codigo2">
+        <button *ngIf="codigo2" matSuffix mat-icon-button aria-label="Clear" (click)="codigo2=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+
+</div>
+
+<div class="g-buttons" align="center">
+  <mat-button-toggle routerLink="/tutorials-3" routerLinkActive="active"><mat-icon>arrow_back</mat-icon>Back</mat-button-toggle>
+
+  <mat-button-toggle class="term" routerLink="/" routerLinkActive="active">Terminar</mat-button-toggle>
+</div>
