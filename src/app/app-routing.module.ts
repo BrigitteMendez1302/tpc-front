@@ -14,10 +14,10 @@ const routes: Routes = [
   { path: 'tutor/:id/tutorships', component: ListTutorshipsComponent },
   { path: 'tutor/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
   { path: 'tutor/:id/tutorships/:tutorshipId/attendance', component: AttendanceComponent },
-  { path: 'coordinator/:id/assitance', component: AssistsComponent },
-  { path: 'coordinator/:id/trainings', component: OrganizetrainingComponent },
-  { path: 'coordinator/:id/trainings/tutors', component: OrganizeTrainingSelectGuestsComponent },
-  { path: 'coordinator/:id/trainings/a', component: ModifytrainingComponent },
+  { path: 'coordinator/:id/management/lessons/:lessonId/attendance', component: AssistsComponent },
+  { path: 'coordinator/:id/management/trainings/:trainingId/edit', component: ModifytrainingComponent },
+  { path: 'coordinator/:id/schedule/trainings/new', component: OrganizetrainingComponent },
+  { path: 'coordinator/:id/schedule/trainings/new/guests', component: OrganizeTrainingSelectGuestsComponent },
 ];
 
 @NgModule({
