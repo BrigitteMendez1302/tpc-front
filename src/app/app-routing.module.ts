@@ -14,18 +14,17 @@ import {EditScheduleComponent} from "./pages/edit-schedule/edit-schedule.compone
 import {AddScheduleComponent2} from "./pages/add-schedule-2/add-schedule.component";
 
 const routes: Routes = [
-  { path: 'tutorias', component: ListTutorshipsComponent },
-  { path: 'tutorials-1', component: ReserveTutorialComponent1 },
-  { path: 'tutorials-2', component: ReserveTutorialComponent2 },
-  { path: 'tutorials-3', component: ReserveTutorialComponent3 },
-  { path: 'tutorials-4', component: ReserveTutorialComponent4 },
-  { path: 'profile/student', component: ProfileStudentComponent },
-  { path: 'profile/tutor', component: ProfileTutorComponent },
-  { path: 'profile/coordinator', component: ProfileCoordinatorComponent },
-  { path: 'coordinator/schedule/new', component: AddScheduleComponent1 },
-  { path: 'coordinator/schedule/new-2', component: AddScheduleComponent2 },
-  { path: 'coordinator/schedule/new-3', component: AddScheduleComponent3 },
-  { path: 'coordinator/schedule/edit', component: EditScheduleComponent }
+  { path: 'student/:id/tutorships/new1', component: ReserveTutorialComponent1 },
+  { path: 'student/:id/tutorships/new2', component: ReserveTutorialComponent2 },
+  { path: 'student/:id/tutorships/new3', component: ReserveTutorialComponent3 },
+  { path: 'student/:id/tutorships/new4', component: ReserveTutorialComponent4 },
+  { path: 'student/:id/profile', component: ProfileStudentComponent },
+  { path: 'tutor/:id/profile', component: ProfileTutorComponent },
+  { path: 'coordinator/:id/profile', component: ProfileCoordinatorComponent },
+  { path: 'coordinator/:id/schedule', component: AddScheduleComponent1 },
+  { path: 'coordinator/:id/schedule/options', component: AddScheduleComponent2 },
+  { path: 'coordinator/:id/schedule/options/add', component: AddScheduleComponent3 },
+  { path: 'coordinator/:id/schedule/options/edit', component: EditScheduleComponent }
 ];
 
 @NgModule({
