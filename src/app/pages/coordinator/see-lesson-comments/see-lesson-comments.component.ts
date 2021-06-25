@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {NavigationExtras} from "@angular/router";
+
 
 @Component({
   selector: 'app-see-lesson-comments',
@@ -8,12 +10,12 @@ import {Router} from "@angular/router";
 })
 export class SeeLessonCommentsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
   navigateToSpecificComment(): void {
-    this.router.navigate([`coordinator/102/lessons/1/reports/options/seecomments/101`])
-      .then(() => console.log('Navigated to see more about the tutorship'));
+    this.router.navigate([':commentId'], {relativeTo: this.route})
+      .then(() => console.log('Navigated to see more about the lesson comment'));
   }
 }

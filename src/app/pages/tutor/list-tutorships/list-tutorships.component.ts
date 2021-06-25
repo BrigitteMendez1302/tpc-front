@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-
+import {ActivatedRoute, Router} from "@angular/router";
+import {NavigationExtras} from "@angular/router";
 
 @Component({
   selector: 'app-list-tutorships',
@@ -9,13 +9,13 @@ import {Router} from "@angular/router";
 })
 export class ListTutorshipsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
   navigateToSpecificWorkshop(): void {
-    this.router.navigate([`tutors/101/tutorships/4`])
+    this.router.navigate([':tutorshipId'], {relativeTo: this.route})
       .then(() => console.log('Navigated to see more about the tutorship'));
   }
 }
