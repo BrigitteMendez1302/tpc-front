@@ -30,7 +30,7 @@ export class MainTutorComponent implements OnInit {
       });
   }
   navigateToSeeTutorShips(): void {
-    this.router.navigate([`tutors/101/tutorships`])
+    this.router.navigate([`tutor/${this.tutorId}/tutorships`])
       .then(() => console.log('Navigated to see more about the tutorship'));
   }
 }
