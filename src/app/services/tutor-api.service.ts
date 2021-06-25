@@ -26,7 +26,7 @@ export class TutorApiService {
 */
   }
   getUserById(id: number):Observable<any>{
-    return this.http.get<any>(this.basePath+`lessontypes/${id}`, this.httpOptions)
+    return this.http.get<any>(this.basePath+`tutors/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
