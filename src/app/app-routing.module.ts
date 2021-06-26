@@ -28,8 +28,10 @@ import {OrganizetrainingComponent} from "./pages/coordinator/organizetraining/or
 import {OrganizeTrainingSelectGuestsComponent} from "./pages/coordinator/organize-training-select-guests/organize-training-select-guests.component";
 import {ModifytrainingComponent} from "./pages/coordinator/modifytraining/modifytraining.component";
 import { SeeSpecificReservationComponent } from './pages/student/see-specific-reservation/see-specific-reservation.component';
+import {LoginComponent} from "./pages/login/login.component";
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   { path: 'tutor/:id/main', component: MainTutorComponent },
   { path: 'tutor/:id/tutorships', component: ListTutorshipsComponent },
   { path: 'tutor/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
@@ -59,6 +61,7 @@ const routes: Routes = [
   { path: 'coordinator/:id/schedule/trainings/new/guests', component: OrganizeTrainingSelectGuestsComponent },
   { path:'coordinator/:id/management/lessons/:lessonId/comments', component: SeeLessonCommentsComponent},
   { path:'coordinator/:id/management/lessons/:lessonId/comments/:commentId', component: SeeSpecificLessonCommentComponent},
+  { path: 'login', component: LoginComponent},
 ]
 
 
