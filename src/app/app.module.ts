@@ -62,6 +62,7 @@ import { OrganizeTrainingSelectGuestsComponent } from './pages/coordinator/organ
 import { ModifytrainingComponent } from './pages/coordinator/modifytraining/modifytraining.component';
 import {CoordinatorComponent} from "./pages/coordinator/coordinator/coordinator.component";
 import {CoordinatorService} from "./services/coordinator.service";
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import {CoordinatorService} from "./services/coordinator.service";
     OrganizetrainingComponent,
     OrganizeTrainingSelectGuestsComponent,
     CoordinatorComponent,
-    ModifytrainingComponent
+    ModifytrainingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,7 @@ import {AssistsComponent} from "./pages/coordinator/assists/assists.component";
 import {OrganizetrainingComponent} from "./pages/coordinator/organizetraining/organizetraining.component";
 import {OrganizeTrainingSelectGuestsComponent} from "./pages/coordinator/organize-training-select-guests/organize-training-select-guests.component";
 import {ModifytrainingComponent} from "./pages/coordinator/modifytraining/modifytraining.component";
+import {LoginComponent} from "./pages/login/login.component";
 
 const routes: Routes = [
   { path: 'tutor/:id', component: MainTutorComponent },
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: 'coordinator/:id/schedule/trainings/new/guests', component: OrganizeTrainingSelectGuestsComponent },
   { path:'coordinator/:id/management/lessons/:lessonId/comments', component: SeeLessonCommentsComponent},
   { path:'coordinator/:id/management/lessons/:lessonId/comments/:commentId', component: SeeSpecificLessonCommentComponent},
+  { path: 'login', component: LoginComponent},
 ]
 
 
