@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tutorial } from '../../models/tutorial';
+import { Tutorial } from '../../../models/tutorial';
 
 
 @Component({
