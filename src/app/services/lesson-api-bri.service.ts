@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
-import {catchError, retry} from "rxjs/operators";
-import {TutorTpc} from "../models/tutortpc";
+import {Lessontpc} from "../models/lessontpc";
 
 @Injectable({
   providedIn: 'root'
 })
-export class TutorApiService {
+export class LessonApiBriService {
   basePath = 'https://tpc-backend-deploy.herokuapp.com/api/';
   constructor(private http: HttpClient) { }
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
@@ -20,14 +19,8 @@ export class TutorApiService {
     }
     return throwError('Something happened with request, please try again later.');
   }
-  getAllUsers(id: number){
-/*
-    return this.http.get(this.basePath+`lessontypes/${id}`)
-      .pipe(retry(2), catchError(this.handleError));
-*/
-  }
-  getUserById(id: number):Observable<TutorTpc>{
-    return this.http.get<TutorTpc>(this.basePath+`tutors/${id}`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
+  getLessonsByTutorIdAndLessonTypeIdAndInRange(tutorId: number, lessonTypeId: number,
+                                               startDate: string, endDate: string): Observable<any>{
+    return this.http.get(this.basePath+`lessons/filtered?start=${startDate}&end=${endDate}&tutorId=${tutorId}&lessonTypeId=${lessonTypeId}&pageNumber=0&pageSize=0&sort[sorted]=true&sort[unsorted]=true&sort[empty]=true&unpaged=true&paged=true&offset=0`);
   }
 }

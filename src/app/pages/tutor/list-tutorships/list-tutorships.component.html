@@ -1,11 +1,11 @@
 <div class="container">
   <h1>Mis tutorías</h1>
   <mat-list role="list">
-    <mat-list-item class="m-list-item" role="listitem">
+    <mat-list-item class="m-list-item" role="listitem" *ngFor="let tutorship of tutorships">
       <div class="flex">
-        <h3>Programación I</h3>
-        <h3>Martes 5:30pm</h3>
-        <a mat-button class="mat-button-text btn" color="primary" (click)="navigateToSpecificWorkshop()" >VER MÁS</a>
+        <h3>{{tutorship.course.name}}</h3>
+        <h3>{{formatAMPM(tutorship.startDate)}}</h3>
+        <a mat-button class="mat-button-text btn" color="primary" (click)="navigateToSpecificWorkshop(tutorship.id)" >VER MÁS</a>
       </div>
     </mat-list-item>
   </mat-list>

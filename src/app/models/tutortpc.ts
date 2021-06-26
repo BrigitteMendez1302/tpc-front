@@ -4,4 +4,5 @@ export interface TutorTpc{
   lastName: string
   mail: string
   phoneNumber: number
+  role: number
 }

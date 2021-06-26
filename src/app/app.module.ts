@@ -61,6 +61,7 @@ import { OrganizetrainingComponent } from './pages/coordinator/organizetraining/
 import { OrganizeTrainingSelectGuestsComponent } from './pages/coordinator/organize-training-select-guests/organize-training-select-guests.component';
 import { ModifytrainingComponent } from './pages/coordinator/modifytraining/modifytraining.component';
 import {CoordinatorComponent} from "./pages/coordinator/coordinator/coordinator.component";
+import {LessonApiBriService} from "./services/lesson-api-bri.service";
 
 @NgModule({
   declarations: [
@@ -147,7 +148,7 @@ import {CoordinatorComponent} from "./pages/coordinator/coordinator/coordinator.
     MatSelectModule,
     MatButtonToggleModule
   ],
-  providers: [TutorApiService, LessonStudentsApiService, LessonApiService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
+  providers: [TutorApiService, LessonStudentsApiService, LessonApiService, LessonApiBriService , {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
