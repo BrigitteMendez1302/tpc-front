@@ -23,5 +23,10 @@
   justify-content: space-between;
 }
 .main-container {
-  width: 75%;
+
+}
+.img-main{
+  width: 200px;
+  height: 200px;
+  /*display: none;*/
 }

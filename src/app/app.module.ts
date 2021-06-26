@@ -63,6 +63,7 @@ import { ModifytrainingComponent } from './pages/coordinator/modifytraining/modi
 import {CoordinatorComponent} from "./pages/coordinator/coordinator/coordinator.component";
 import {LessonApiBriService} from "./services/lesson-api-bri.service";
 import { SeeSpecificReservationComponent } from './pages/student/see-specific-reservation/see-specific-reservation.component';
+import {CoordinatorService} from "./services/coordinator.service";
 
 @NgModule({
   declarations: [
@@ -150,7 +151,7 @@ import { SeeSpecificReservationComponent } from './pages/student/see-specific-re
     MatSelectModule,
     MatButtonToggleModule
   ],
-  providers: [TutorApiService, LessonStudentsApiService, LessonApiService, LessonApiBriService , {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
+  providers: [CoordinatorService ,TutorApiService, LessonStudentsApiService, LessonApiService, LessonApiBriService , {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
