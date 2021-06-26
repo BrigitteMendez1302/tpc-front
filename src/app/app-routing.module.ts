@@ -30,7 +30,7 @@ import {ModifytrainingComponent} from "./pages/coordinator/modifytraining/modify
 import { SeeSpecificReservationComponent } from './pages/student/see-specific-reservation/see-specific-reservation.component';
 
 const routes: Routes = [
-  { path: 'tutor/:id', component: MainTutorComponent },
+  { path: 'tutor/:id/main', component: MainTutorComponent },
   { path: 'tutor/:id/tutorships', component: ListTutorshipsComponent },
   { path: 'tutor/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
   //{ path: 'tutor/:id/tutorship/:tutorshipId/attendance', component: AttendanceComponent },
@@ -39,7 +39,7 @@ const routes: Routes = [
   { path:'tutor/:id/performance', component: PerformanceComponent},
   { path:'student/:id/workshops/new', component: ListWorkshopsStudentComponent},
   { path: 'tutor/:id/tutorships/:tutorshipId/attendance', component: AttendanceComponent },
-  { path: 'student/:id',component:MainStudentComponent},
+  { path: 'student/:id/main',component:MainStudentComponent},
   { path: 'student/:id/reservations', component: ReservationComponent},
   { path: 'student/:id/reservations/:reservationId',component:SeeSpecificReservationComponent},
   { path: 'student/:id/tutorships/new1', component: ReserveTutorialComponent1 },
