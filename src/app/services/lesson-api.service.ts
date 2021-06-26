@@ -12,7 +12,7 @@ export class LessonApiService {
   basePath ='http://localhost:3000/api/lesson';
   constructor(private http:HttpClient) { }
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
-  
+
   handleError(error: HttpErrorResponse): Observable<never> {
     if (error.error instanceof ErrorEvent) {
       console.log('An error occurred: ', error.error.message);
