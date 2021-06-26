@@ -29,21 +29,14 @@ export class SeeSpecificWorkshipComponent implements OnInit {
 
   formatAMPM(isoDate: string) {
     let date = new Date(isoDate)
-    let days:number = date.getDay();
-    let strDays = this.formatDaySpanish(days);
     let hours = date.getHours();
     let minutes: string | number = date.getMinutes();
     let ampm = hours >= 12 ? ' pm ' : ' am ';
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes;
-    let strTime = strDays + hours + ':' + minutes + ' ' + ampm;
+    let strTime =  hours + ':' + minutes + ' ' + ampm;
     return strTime;
-  }
-  formatDaySpanish(num: number){
-    let weekday : Array<string> =["Domingo ","Lunes ", "Martes ", "Miércoles ", "Jueves ", "Viernes ", "Sábado "]
-    console.log(weekday[num]);
-    return weekday[num];
   }
   formatDateIsoDate(paramDate:any){
     let date = new Date(paramDate);
@@ -57,5 +50,9 @@ export class SeeSpecificWorkshipComponent implements OnInit {
       month = '0' + month;
     }
     return year+'-' + month + '-'+dt
+  }
+  navigateToAttendance(){
+    this.router.navigate(['attendance'], { relativeTo: this.route })
+      .then(() => console.log('Navigated to see the attendance for this tutorship'));
   }
 }

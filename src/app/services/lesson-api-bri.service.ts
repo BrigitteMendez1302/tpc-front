@@ -30,4 +30,8 @@ export class LessonApiBriService {
   getLessonById(lessonId: number): Observable<any>{
     return this.http.get(this.basePath+`lessons/${lessonId}`)
   }
+  getLessonStudentsByLessonId(lessonId: number): Observable<any>{
+    return this.http.get(this.basePath + `lessons/${lessonId}/lessonstudents`)
+  }
 }
+
