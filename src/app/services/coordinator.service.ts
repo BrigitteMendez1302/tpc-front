@@ -8,7 +8,7 @@ import {catchError, retry} from "rxjs/operators";
   providedIn: 'root'
 })
 export class CoordinatorService {
-  basePath = 'http://localhost:3000/api/coordinator';
+  basePath = 'https://tpc-backend-deploy.herokuapp.com/api/';
   constructor(private http: HttpClient) { }
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
 // API Error Handling
