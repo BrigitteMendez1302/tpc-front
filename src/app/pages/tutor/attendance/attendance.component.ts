@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { LessonStudent } from '../interfaces/lesson-student.interface';
 import { LessonStudentsApiService } from '../../../services/lesson-student-api.service';
 
-
 @Component({
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
@@ -17,7 +16,7 @@ export class AttendanceComponent implements OnInit{
   selection = new SelectionModel<LessonStudent>(true, []);
 
   constructor(private lessonStudentsApiService:LessonStudentsApiService) {
- 
+
   }
 
   getAllStudents(): void {
@@ -43,7 +42,7 @@ export class AttendanceComponent implements OnInit{
       this.dataSource.data.forEach(row => { this.selection.select(row); row.assistance = true });
     }
   }
-  
+
 
   toggleCheckbox(row: LessonStudent) {
     this.selection.toggle(row);
