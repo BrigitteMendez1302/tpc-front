@@ -29,7 +29,7 @@ export class CoordinatorService {
   }
   // Get Coordinator by Id
   getCoordinatorById(id: number): Observable<Coordinator> {
-    return this.http.get<Coordinator>(`${this.basePath}/${id}`, this.httpOptions )
+    return this.http.get<Coordinator>(`${this.basePath}coordinators/${id}`, this.httpOptions )
       .pipe(retry(2), catchError(this.handleError));
   }
   // Get Coordinator Data
