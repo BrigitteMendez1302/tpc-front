@@ -38,8 +38,8 @@
             <div class="flex">
               <h3>{{reservation.course}}</h3>
               <h3>{{reservation.tutor}}</h3>
-              <h3>{{reservation .lessonType}}</h3>
-              <a mat-button class="mat-button-text btn" color="primary" >Detalles</a>
+              <h3>{{reservation.lessonType}}</h3>
+              <a mat-button class="mat-button-text btn" color="primary" (click)="navigateToSeeSpecificReserve(reservation.id)" >Detalles</a>
             </div>
           </mat-list-item>
         </mat-list>

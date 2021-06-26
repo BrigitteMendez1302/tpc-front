@@ -27,4 +27,9 @@ export class LessonApiService {
     return this.http.get<Lesson>(this.basePath)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  getLessonById(id:String):Observable<Lesson>{
+    return this.http.get<Lesson>(`${this.basePath}/${id}`)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

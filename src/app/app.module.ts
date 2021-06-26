@@ -61,6 +61,8 @@ import { OrganizetrainingComponent } from './pages/coordinator/organizetraining/
 import { OrganizeTrainingSelectGuestsComponent } from './pages/coordinator/organize-training-select-guests/organize-training-select-guests.component';
 import { ModifytrainingComponent } from './pages/coordinator/modifytraining/modifytraining.component';
 import {CoordinatorComponent} from "./pages/coordinator/coordinator/coordinator.component";
+import { SeeSpecificReservationComponent } from './pages/student/see-specific-reservation/see-specific-reservation.component';
+
 
 @NgModule({
   declarations: [
@@ -99,7 +101,8 @@ import {CoordinatorComponent} from "./pages/coordinator/coordinator/coordinator.
     OrganizetrainingComponent,
     OrganizeTrainingSelectGuestsComponent,
     CoordinatorComponent,
-    ModifytrainingComponent
+    ModifytrainingComponent,
+    SeeSpecificReservationComponent,
   ],
   imports: [
     BrowserModule,

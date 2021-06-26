@@ -14,7 +14,7 @@ export class MainStudentComponent implements OnInit {
   }
 
   navigateToSeeReservations(): void {
-    this.router.navigate([`student/101/reservations`])
+    this.router.navigate([`student/1/reservations`])
       .then(() => console.log('Navigated to see more about the reservations'));
   }
 

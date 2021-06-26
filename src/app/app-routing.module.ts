@@ -27,6 +27,7 @@ import {AssistsComponent} from "./pages/coordinator/assists/assists.component";
 import {OrganizetrainingComponent} from "./pages/coordinator/organizetraining/organizetraining.component";
 import {OrganizeTrainingSelectGuestsComponent} from "./pages/coordinator/organize-training-select-guests/organize-training-select-guests.component";
 import {ModifytrainingComponent} from "./pages/coordinator/modifytraining/modifytraining.component";
+import { SeeSpecificReservationComponent } from './pages/student/see-specific-reservation/see-specific-reservation.component';
 
 const routes: Routes = [
   { path: 'tutor/:id', component: MainTutorComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'tutor/:id/tutorships/:tutorshipId/attendance', component: AttendanceComponent },
   { path: 'student/:id',component:MainStudentComponent},
   { path: 'student/:id/reservations', component: ReservationComponent},
+  { path: 'student/:id/reservations/:reservationId',component:SeeSpecificReservationComponent},
   { path: 'student/:id/tutorships/new1', component: ReserveTutorialComponent1 },
   { path: 'student/:id/tutorships/new2', component: ReserveTutorialComponent2 },
   { path: 'student/:id/tutorships/new3', component: ReserveTutorialComponent3 },

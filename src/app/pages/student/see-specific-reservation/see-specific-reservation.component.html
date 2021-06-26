@@ -1,0 +1,17 @@
+<div>
+  <div>
+    <h1 style="font-weight: 600; font-size:30px; margin: 40px 0px 0px 40px;">Detalles de la reserva</h1>
+    <div class="tutoria">
+      <div class="details">
+        <h3>Tipo de reserva: {{lesson.lessonType}}</h3>
+        <h3>Curso: {{lesson.course}}</h3>
+        <h3>Tutor: {{lesson.tutor}}</h3>
+        <h3>Aula/Enlace de sesión: <a href="https://{{lesson.urlSession}}">{{lesson.urlSession}}</a></h3>
+      </div>
+    </div>
+    <div class="buttons">
+      <a mat-button class="mat-button-text btn" color="primary" >CANCELAR RESERVA</a>
+      <a mat-button class="mat-button-text btn" color="primary" >CALIFICAR TUTORIA</a>
+    </div>
+  </div>
+</div>
