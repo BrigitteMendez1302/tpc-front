@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LessonApiService } from '../../../services/lesson-api.service';
 import { Lesson } from '../interfaces/lesson.interface';
 
@@ -11,7 +12,7 @@ import { Lesson } from '../interfaces/lesson.interface';
 })
 export class ReservationComponent implements OnInit {
   listLessons:Lesson[]=[]
-  constructor(private lessonApiService:LessonApiService) { }
+  constructor(private lessonApiService:LessonApiService,private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getAllStudents();
@@ -22,5 +23,10 @@ export class ReservationComponent implements OnInit {
       this.listLessons = response;
       console.log(this.listLessons);
     });
+  }
+
+  navigateToSeeSpecificReserve(id:number):void{
+    this.router.navigate([`student/1/reservations/${id}`])
+      .then(() => console.log('Navigated to see a specific reservation'));
   }
 }

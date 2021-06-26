@@ -62,6 +62,7 @@ import { OrganizeTrainingSelectGuestsComponent } from './pages/coordinator/organ
 import { ModifytrainingComponent } from './pages/coordinator/modifytraining/modifytraining.component';
 import {CoordinatorComponent} from "./pages/coordinator/coordinator/coordinator.component";
 import {LessonApiBriService} from "./services/lesson-api-bri.service";
+import { SeeSpecificReservationComponent } from './pages/student/see-specific-reservation/see-specific-reservation.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import {LessonApiBriService} from "./services/lesson-api-bri.service";
     OrganizetrainingComponent,
     OrganizeTrainingSelectGuestsComponent,
     CoordinatorComponent,
-    ModifytrainingComponent
+    ModifytrainingComponent,
+    SeeSpecificReservationComponent,
   ],
   imports: [
     BrowserModule,

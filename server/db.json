@@ -21,29 +21,39 @@
   ],
   "lesson":[
     {
-    "course":"Programacion 1",
-    "tutor":"Josue Uribe",
-    "lessonType":"Taller"
+      "id":1,
+      "course":"Programacion 1",
+      "tutor":"Josue Uribe",
+      "lessonType":"Taller",
+      "urlSession":"meet.google.com/sshd-a2fd"
     },
     {
+      "id":2,
       "course":"Programacion 2",
       "tutor":"Lucas Moreno",
-      "lessonType":"Tutoria"
+      "lessonType":"Tutoria",
+      "urlSession":"meet.google.com/vddg-a2fd"
     },
     {
+      "id":3,
       "course":"Calculo 1",
       "tutor":"Briggite",
-      "lessonType":"Tutoria"
+      "lessonType":"Tutoria",
+      "urlSession":"meet.google.com/tjfs-a2fd"
     },
     {
+      "id":4,
       "course":"Fisica 3",
       "tutor":"Manuel Ramos",
-      "lessonType":"Taller"
+      "lessonType":"Taller",
+      "urlSession":"meet.google.com/ghtr-a2fd"
     },
     {
+      "id":5,
       "course":"Quimica 2",
       "tutor":"Josue Chauca",
-      "lessonType":"Taller"
+      "lessonType":"Taller",
+      "urlSession":"meet.google.com/asda-a2fd"
     }
   ],
   "User": [
