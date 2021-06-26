@@ -3,10 +3,10 @@
     <div class="tutoria">
       <h2>Detalles de la clase</h2>
       <div class="details">
-        <h3>Tema: Bucles(For y while)</h3>
-        <h3>Fecha: Martes</h3>
-        <h3>Inicio de clase: 5:30pm</h3>
-        <h3>Fin de clase: 6:30pm</h3>
+        <h3>Descripcion: {{tutorship.description}}</h3>
+        <h3>Fecha: {{ formatDateIsoDate(tutorship.startDate) }}</h3>
+        <h3>Inicio de clase: {{ formatAMPM(tutorship.startDate) }}</h3>
+        <h3>Fin de clase: {{ formatAMPM(tutorship.endDate) }}</h3>
       </div>
     </div>
     <div class="buttons">

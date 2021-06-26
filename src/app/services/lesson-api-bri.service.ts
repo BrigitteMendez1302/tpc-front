@@ -8,8 +8,11 @@ import {Lessontpc} from "../models/lessontpc";
 })
 export class LessonApiBriService {
   basePath = 'https://tpc-backend-deploy.herokuapp.com/api/';
+
   constructor(private http: HttpClient) { }
+
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
+
   handleError(error: HttpErrorResponse): Observable<never> {
     if (error.error instanceof ErrorEvent) {
       console.log('An error occurred: ', error.error.message);
@@ -19,8 +22,12 @@ export class LessonApiBriService {
     }
     return throwError('Something happened with request, please try again later.');
   }
+
   getLessonsByTutorIdAndLessonTypeIdAndInRange(tutorId: number, lessonTypeId: number,
                                                startDate: string, endDate: string): Observable<any>{
-    return this.http.get(this.basePath+`lessons/filtered?start=${startDate}&end=${endDate}&tutorId=${tutorId}&lessonTypeId=${lessonTypeId}&pageNumber=0&pageSize=0&sort[sorted]=true&sort[unsorted]=true&sort[empty]=true&unpaged=true&paged=true&offset=0`);
+    return this.http.get(this.basePath+`lessons/filtered?start=${startDate}&end=${endDate}&tutorId=${tutorId}&lessonTypeId=${lessonTypeId}`);
+  }
+  getLessonById(lessonId: number): Observable<any>{
+    return this.http.get(this.basePath+`lessons/${lessonId}`)
   }
 }
