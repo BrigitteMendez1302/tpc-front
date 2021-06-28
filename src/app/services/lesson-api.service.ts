@@ -31,6 +31,14 @@ export class LessonApiService {
     return this.http.get<Lesson>(this.basePath + `lessons/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }*/
+  getLessonsByLessonTypeId(id:number):Observable<Lesson>{
+    return this.http.get<Lesson>(`${this.basePath}lessons/filter?lessonTypeId=${id}`)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  /*  getLessonById(id: number): Observable<Lesson> {
+      return this.http.get<Lesson>(this.basePath + `lessons/${id}`, this.httpOptions)
+        .pipe(retry(2), catchError(this.handleError));
+    }*/
   updateLessonById(id:number, item:any): Observable<Lesson> {
     return this.http.put<Lesson>(this.basePath + `lessons/${id}`, item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
@@ -39,8 +47,11 @@ export class LessonApiService {
     return this.http.post<Lesson>(this.basePath + `lessons${tutorId}`, item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-  getLessonById(id:String):Observable<Lesson>{
-    return this.http.get<Lesson>(`${this.basePath}/${id}`)
+  /*getLessonById(id:String):Observable<Lesson>{
+    return this.http.get<Lesson>(`${this.basePath}/${id}`)*/
+
+  getLessonById(id:number):Observable<Lesson>{
+    return this.http.get<Lesson>(`${this.basePath}lessons/${id}`)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

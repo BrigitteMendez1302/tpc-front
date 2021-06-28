@@ -19,9 +19,9 @@ export class SeeSpecificReservationComponent implements OnInit {
   }
 
   getLessonById(id:String): void {
-    this.lessonApiService.getLessonById(id).subscribe((response: any) => {
+    /*this.lessonApiService.getLessonById(id).subscribe((response: any) => {
       this.lesson = response;
-    });
+    });*/
   }
 
 }

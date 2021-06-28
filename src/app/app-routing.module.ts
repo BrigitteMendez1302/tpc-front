@@ -44,6 +44,7 @@ const routes: Routes = [
   { path: 'student/:id/main',component:MainStudentComponent},
   { path: 'student/:id/reservations', component: ReservationComponent},
   { path: 'student/:id/reservations/:reservationId',component:SeeSpecificReservationComponent},
+  { path: 'student/:id/reservations/:reservationId',component:SeeSpecificReservationComponent},
   { path: 'student/:id/tutorships/new1', component: ReserveTutorialComponent1 },
   { path: 'student/:id/tutorships/new2', component: ReserveTutorialComponent2 },
   { path: 'student/:id/tutorships/new3', component: ReserveTutorialComponent3 },

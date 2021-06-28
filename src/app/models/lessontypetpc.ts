@@ -3,3 +3,6 @@ export interface Lessontypetpc{
   name: string
   quantity: number
 }
+
+export class LessonType {
+}

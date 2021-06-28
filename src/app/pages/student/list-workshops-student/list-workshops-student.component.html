@@ -5,7 +5,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Elige un curso</mat-label>
       <mat-select>
-        <mat-option *ngFor="let course of courses" [value]="course.id">{{course.courseName}}</mat-option>
+        <mat-option *ngFor="let course of courses" [value]="course.id">{{course.name}}</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -19,12 +19,14 @@
 
   <mat-nav-list>
     <mat-list-item *ngFor="let workshop of workshops" class="list-principal">
-      <p mat-line style="font-weight: lighter; font-size: medium">{{ workshop.courseName }}</p>
-      <p mat-line style="font-weight: lighter; font-size: medium">{{ workshop.tutorName }}</p>
-      <p mat-line style="font-weight: lighter; font-size: medium">{{ workshop.starDate }} - {{ workshop.endDate }}</p>
-      <button mat-stroked-button color="white" class="btn-principal"
-              (click)="openDialog(workshop)">
-              Detalles</button>
+      <div class="flex">
+        <p mat-line style="font-weight: lighter; font-size: medium">{{ workshop.course.name }}</p>
+        <p mat-line style="font-weight: lighter; font-size: medium">{{ workshop.tutor.firstName }} {{workshop.tutor.lastName}}</p>
+        <p mat-line style="font-weight: lighter; font-size: medium">{{ formatAMPM(workshop.startDate, true) }} - {{ formatAMPM(workshop.endDate, false) }}</p>
+        <button mat-stroked-button color="white" class="btn-principal"
+                (click)="openDialog(workshop)">
+          Detalles</button>
+      </div>
     </mat-list-item>
   </mat-nav-list>
 </section>

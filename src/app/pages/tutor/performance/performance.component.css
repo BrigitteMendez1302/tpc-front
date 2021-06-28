@@ -1,13 +1,12 @@
 .container {
-  margin: 1rem;
-  padding: 1rem;
+  margin: 2rem;
+  padding: 2rem;
   background-color: #F3F9FA;
   display: flex;
   justify-content: space-between;
-  width: 80%;
 }
 .sub-container{
-  width: 50%;
+width: 100%;
 }
 .btn-principal{
   background-color: transparent;
@@ -15,5 +14,5 @@
   color: #1282A2;
 }
 .main-container {
-  padding: 1rem;
+  padding: 2rem;
 }

@@ -4,12 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavTutorComponent } from './pages/tutor/main-nav-tutor/main-nav-tutor.component';
-import {MatIconModule} from "@angular/material/icon";
-import {MatSidenavModule} from "@angular/material/sidenav";
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatListModule} from "@angular/material/list";
+import { MatIconModule} from "@angular/material/icon";
+import { MatSidenavModule} from "@angular/material/sidenav";
+import { MatToolbarModule} from "@angular/material/toolbar";
+import { MatListModule} from "@angular/material/list";
 import { MatButtonModule } from "@angular/material/button";
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule} from '@angular/material/table';
 import { ListTutorshipsComponent } from './pages/tutor/list-tutorships/list-tutorships.component';
 import { SeeSpecificWorkshipComponent } from './pages/tutor/see-specific-workship/see-specific-workship.component';
 //import { AttendanceComponent } from './pages/tutor/attendance/attendance.component';
@@ -65,6 +65,8 @@ import {LessonApiBriService} from "./services/lesson-api-bri.service";
 import { SeeSpecificReservationComponent } from './pages/student/see-specific-reservation/see-specific-reservation.component';
 import {CoordinatorService} from "./services/coordinator.service";
 import { LoginComponent } from './pages/login/login.component';
+import {LessonTypeApiService} from "./services/lesson-type-api.service";
+import {CourseApiService} from "./services/course.service";
 
 @NgModule({
   declarations: [
@@ -153,7 +155,16 @@ import { LoginComponent } from './pages/login/login.component';
     MatSelectModule,
     MatButtonToggleModule
   ],
-  providers: [CoordinatorService ,TutorApiService, LessonStudentsApiService, LessonApiService, LessonApiBriService , {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
+  providers: [
+    CoordinatorService,
+    TutorApiService,
+    LessonStudentsApiService,
+    LessonApiService,
+    LessonTypeApiService,
+    CourseApiService,
+    LessonApiBriService,
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
+  ],
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
