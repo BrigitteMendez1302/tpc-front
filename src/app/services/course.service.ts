@@ -2,15 +2,18 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
-import {TutorTpc} from "../models/tutortpc";
+import {Coursetpc} from "../models/coursetpc";
 
 @Injectable({
   providedIn: 'root'
 })
-export class TutorApiService {
-  basePath = 'https://tpc-backend-deploy.herokuapp.com/api/';
+export class CourseApiService {
+  // Students Endpoint
+  basePath = 'https://tpc-backend-deploy.herokuapp.com/api/courses';
   constructor(private http: HttpClient) { }
+  // HTTP Default Options
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
+  // API Error Handling
   handleError(error: HttpErrorResponse): Observable<never> {
     if (error.error instanceof ErrorEvent) {
       console.log('An error occurred: ', error.error.message);
@@ -21,14 +24,14 @@ export class TutorApiService {
     return throwError('Something happened with request, please try again later.');
   }
 
-  // Get Tutor Data
-  getAllTutors(): Observable<TutorTpc>{
-    return this.http.get<TutorTpc>(`${this.basePath}tutors`)
+  // Get Course by Id
+  getCourseById(id: number): Observable<Coursetpc> {
+    return this.http.get<Coursetpc>(`${this.basePath}/${id}`, this.httpOptions )
       .pipe(retry(2), catchError(this.handleError));
   }
-  // Get Tutor by Id
-  getUserById(id: number):Observable<any>{
-    return this.http.get<any>(this.basePath+`tutors/${id}`, this.httpOptions)
+  // Get Course Data
+  getAllCourses(): Observable<Coursetpc>{
+    return this.http.get<Coursetpc>(this.basePath)
       .pipe(retry(2), catchError(this.handleError));
   }
-}
+  }

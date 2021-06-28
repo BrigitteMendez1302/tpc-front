@@ -1,6 +1,6 @@
 .btn-principal{
   border-color: #1282A2;
-  border-radius: 0px;
+  border-radius: 0;
   margin: 1.5rem;
   padding: 1.5rem;
   width: 25%;
@@ -29,4 +29,13 @@
   width: 200px;
   height: 200px;
   /*display: none;*/
+}
+
+h1 {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: normal;
 }

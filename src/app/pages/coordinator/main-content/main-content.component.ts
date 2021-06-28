@@ -10,7 +10,6 @@ import * as _ from 'lodash';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
-  username = 'Ángel'
   coordinatorData!: Coordinator;
   coordinatorId!: number;
   constructor(private coordinatorsApi: CoordinatorService, private router: Router,private route: ActivatedRoute) {
