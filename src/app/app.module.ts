@@ -67,6 +67,7 @@ import {CoordinatorService} from "./services/coordinator.service";
 import { LoginComponent } from './pages/login/login.component';
 import {LessonTypeApiService} from "./services/lesson-type-api.service";
 import {CourseApiService} from "./services/course.service";
+import { MainNavStudentComponent } from './pages/student/main-nav-student/main-nav-student.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import {CourseApiService} from "./services/course.service";
     CoordinatorComponent,
     ModifytrainingComponent,
     SeeSpecificReservationComponent,
-    LoginComponent
+    LoginComponent,
+    MainNavStudentComponent
   ],
   imports: [
     BrowserModule,
