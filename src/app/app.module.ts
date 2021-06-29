@@ -11,7 +11,10 @@ import { MatListModule} from "@angular/material/list";
 import { MatButtonModule } from "@angular/material/button";
 import { MatTableModule} from '@angular/material/table';
 import { ListTutorshipsComponent } from './pages/tutor/list-tutorships/list-tutorships.component';
-import { SeeSpecificWorkshipComponent } from './pages/tutor/see-specific-workship/see-specific-workship.component';
+import {
+  DialogDataExampleDialog,
+  SeeSpecificWorkshipComponent
+} from './pages/tutor/see-specific-workship/see-specific-workship.component';
 //import { AttendanceComponent } from './pages/tutor/attendance/attendance.component';
 import { MainTutorComponent } from './pages/tutor/main-tutor/main-tutor.component';
 import { SeeLessonCommentsComponent } from './pages/coordinator/see-lesson-comments/see-lesson-comments.component';
@@ -109,7 +112,8 @@ import { MainNavStudentComponent } from './pages/student/main-nav-student/main-n
     ModifytrainingComponent,
     SeeSpecificReservationComponent,
     LoginComponent,
-    MainNavStudentComponent
+    MainNavStudentComponent,
+    DialogDataExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -151,7 +155,6 @@ import { MainNavStudentComponent } from './pages/student/main-nav-student/main-n
     NgxMaterialTimepickerModule,
     MatCardModule,
     MatFormFieldModule,
-    MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
     MatSelectModule,

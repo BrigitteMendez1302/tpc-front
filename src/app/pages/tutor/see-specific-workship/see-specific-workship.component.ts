@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {LessonApiBriService} from "../../../services/lesson-api-bri.service";
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-see-specific-workship',
@@ -11,7 +12,7 @@ export class SeeSpecificWorkshipComponent implements OnInit {
 
   tutorship: any;
   constructor(private router: Router, private route: ActivatedRoute,
-              private lessonsApiService: LessonApiBriService) {
+              private lessonsApiService: LessonApiBriService, public dialog: MatDialog) {
   }
 
   getTutorship(): void{
@@ -55,4 +56,19 @@ export class SeeSpecificWorkshipComponent implements OnInit {
     this.router.navigate(['attendance'], { relativeTo: this.route })
       .then(() => console.log('Navigated to see the attendance for this tutorship'));
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogDataExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+}
+
+@Component({
+  selector: './see-specific-workship-dialog',
+  templateUrl: './see-specific-workship-dialog.component.html',
+})
+export class DialogDataExampleDialog {
+  constructor() {}
 }
