@@ -11,20 +11,27 @@
       <mat-label class="lbl">Tipo de clase</mat-label>
       <mat-form-field appearance="fill">
         <mat-label>Seleccione el tipo</mat-label>
-        <select matNativeControl required *ngFor="let edit of editS">
-          <option></option>
-          <option value="prog1">{{edit.tipo}}</option>
-        </select>
+        <mat-select matNativeControl>
+          <mat-option *ngFor="let lssts of lessonTypes" value="{{lssts.id}}">{{lssts.name}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </mat-card-content>
     <mat-card-content>
       <mat-label  class="lbl">Tutor</mat-label>
       <mat-form-field appearance="fill">
         <mat-label>Seleccione el tutor</mat-label>
-        <select matNativeControl required *ngFor="let edit of editS">
-          <option></option>
-          <option value="prog1">{{edit.tutor}}</option>
-        </select>
+        <mat-select matNativeControl>
+          <mat-option  *ngFor="let ttor of tutors" value="{{ttor.id}}">{{ttor.firstName}} {{ttor.lastName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label  class="lbl">Curso</mat-label>
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione el curso</mat-label>
+        <mat-select matNativeControl>
+          <mat-option  *ngFor="let crs of courses" value="{{crs.id}}">{{crs.name}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </mat-card-content>
     <mat-card-content>
