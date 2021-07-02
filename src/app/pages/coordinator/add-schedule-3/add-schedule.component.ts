@@ -21,6 +21,7 @@ export class AddScheduleComponent3 implements OnInit {
   editS: Schedule[] = [
     {horario:'7:30 - 8:40', tipo:'Taller', tutor:'Rodriguez', fecha: new Date(), endDate: new Date().getHours(), startDate: new Date().getHours()}
   ]
+
   tutor =  {} as TutorTpc;
   tutors: TutorTpc[] = [];
   courses: Coursetpc[] = [];
