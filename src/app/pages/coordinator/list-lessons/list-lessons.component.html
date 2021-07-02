@@ -1,0 +1,48 @@
+<app-main-nav-coordinator>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Lecciones</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content">
+        <mat-form-field>
+          <mat-label>Buscar</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Programacion" #input>
+          <mat-icon *ngIf="isFiltering" matSuffix>search</mat-icon>
+        </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="curso">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Curso</th>
+        <td mat-cell *matCellDef="let element"> {{ element.course.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="tutor">
+        <th mat-header-cell *matHeaderCellDef>Tutor</th>
+        <td mat-cell *matCellDef="let element"> {{ element.tutor.firstName }} {{element.tutor.lastName}}</td>
+      </ng-container>
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef>Fecha</th>
+        <td mat-cell *matCellDef="let element"> {{ formatDateIsoDate(element.startDate) }}</td>
+      </ng-container>
+      <ng-container matColumnDef="lessonType">
+        <th mat-header-cell *matHeaderCellDef>Tipo de clase</th>
+        <td mat-cell *matCellDef="let element"> {{ element.lessonType.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element">
+          <a href="javascript:void(0)" (click)="navigateToEditLesson(element.id)"><mat-icon inline aria-hidden="false" aria-label="Edit" style="padding-right: 10px;" >edit</mat-icon></a>
+          <a href="javascript:void(0)" (click)="navigateToSpecificLesson(element.id)"><mat-icon inline aria-hidden="false" aria-label="See More" style="padding-right: 10px;">visibility</mat-icon></a>
+          <a href="javascript:void(0)" ><mat-icon inline aria-hidden="false" aria-label="Delete">circle</mat-icon></a>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+  <!--
+  <mat-card-actions>
+    <a mat-button class="mat-button-text" color="primary" (click)="navigateToAddStudent()">Add Student</a>
+    <a mat-button class="mat-button-text" color="primary" (click)="navigateToAddStudent()">Add Student</a>
+  </mat-card-actions>-->
+</mat-card>
+</app-main-nav-coordinator>

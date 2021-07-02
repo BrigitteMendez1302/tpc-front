@@ -1,0 +1,23 @@
+<app-main-nav-coordinator>
+  <div>
+    <div>
+      <div class="tutoria">
+        <h2>Detalles de la clase</h2>
+        <div class="details">
+          <h3>Tipo de clase: {{tutorship.lessonType.name}}</h3>
+          <h3>Curso: {{tutorship.course.name}}</h3>
+          <h3>Tutor de clase: {{tutorship.tutor.firstName}} {{tutorship.tutor.lastName}}</h3>
+          <h3>Fecha: {{ formatDateIsoDate(tutorship.startDate) }}</h3>
+          <h3>Inicio de clase: {{ formatAMPM(tutorship.startDate) }}</h3>
+          <h3>Fin de clase: {{ formatAMPM(tutorship.endDate) }}</h3>
+          <h3>Descripcion: {{tutorship.description}}</h3>
+        </div>
+      </div>
+      <div class="buttons">
+        <a mat-button class="mat-button-text btn" color="primary" (click)="navigateToAttendance()">VER ASISTENCIA</a>
+        <a mat-button class="mat-button-text btn" color="primary"  (click)="navigateToComments()">VER COMENTARIOS</a>
+        <a mat-button class="mat-button-text btn" color="primary" [href]="tutorship.meetingLink" >INGRESAR A LA SESIÓN</a>
+      </div>
+    </div>
+  </div>
+</app-main-nav-coordinator>

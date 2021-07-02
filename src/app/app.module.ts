@@ -16,6 +16,14 @@ import {
   SeeSpecificWorkshipComponent
 } from './pages/tutor/see-specific-workship/see-specific-workship.component';
 //import { AttendanceComponent } from './pages/tutor/attendance/attendance.component';
+import {
+  GoogleApiModule,
+  GoogleApiService,
+  GoogleAuthService,
+  NgGapiClientConfig,
+  NG_GAPI_CONFIG,
+  GoogleApiConfig
+} from "ng-gapi";
 import { MainTutorComponent } from './pages/tutor/main-tutor/main-tutor.component';
 import { SeeLessonCommentsComponent } from './pages/coordinator/see-lesson-comments/see-lesson-comments.component';
 import { SeeSpecificLessonCommentComponent } from './pages/coordinator/see-specific-lesson-comment/see-specific-lesson-comment.component';
@@ -77,6 +85,15 @@ import { ListLessonsComponent } from './pages/coordinator/list-lessons/list-less
 import { ListTrainingsComponent } from './pages/coordinator/list-trainings/list-trainings.component';
 import {CommonModule} from "@angular/common";
 import { SpecificLessonComponent } from './pages/coordinator/specific-lesson/specific-lesson.component';
+
+let gapiClientConfig: NgGapiClientConfig = {
+  client_id: "437532304249-udd962otmcipe2jau8i1osbljgje1jhh.apps.googleusercontent.com",
+  discoveryDocs:  ['https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+  scope: [
+    "https://www.googleapis.com/auth/calendar",
+    "https://www.googleapis.com/auth/calendar.events"
+  ].join(" ")
+};
 
 @NgModule({
   declarations: [
@@ -169,7 +186,11 @@ import { SpecificLessonComponent } from './pages/coordinator/specific-lesson/spe
     MatNativeDateModule,
     MatSelectModule,
     MatButtonToggleModule,
-    CommonModule
+    CommonModule,
+    GoogleApiModule.forRoot({
+      provide: NG_GAPI_CONFIG,
+      useValue: gapiClientConfig
+    }),
   ],
   providers: [
     LessonStudentsApiBriService,

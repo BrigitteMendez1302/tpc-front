@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+tr.editable-row {
+  background-color: lightcyan;
+}
+.content{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+

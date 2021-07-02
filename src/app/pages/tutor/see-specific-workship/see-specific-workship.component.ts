@@ -1,15 +1,19 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import {Component, OnInit, Inject, ChangeDetectorRef} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {LessonApiBriService} from "../../../services/lesson-api-bri.service";
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {GoogleSignInService} from "../../../services/google-sign-in.service";
+import {CalendarService} from "../../../services/calendar.service";
 
 @Component({
   selector: 'app-see-specific-workship',
   templateUrl: './see-specific-workship.component.html',
   styleUrls: ['./see-specific-workship.component.css']
 })
-export class SeeSpecificWorkshipComponent implements OnInit {
 
+
+
+export class SeeSpecificWorkshipComponent implements OnInit {
   date: any;
   tutorship: any;
   startTime: any;
@@ -17,11 +21,13 @@ export class SeeSpecificWorkshipComponent implements OnInit {
   isoStartDate:any;
   isoEndDate:any;
   gapi: any;
-  user: boolean = false;
-  isTutor: boolean = true;
+  user: gapi.auth2.GoogleUser | undefined;
 
   constructor(private router: Router, private route: ActivatedRoute,
-              private lessonsApiService: LessonApiBriService, public dialog: MatDialog) {
+              private lessonsApiService: LessonApiBriService, public dialog: MatDialog,
+              private signInService : GoogleSignInService,
+              private ref: ChangeDetectorRef,
+              private calendarService: CalendarService) {
   }
 
   getTutorship(): void{
@@ -40,8 +46,21 @@ export class SeeSpecificWorkshipComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user = this.router.url.includes("coordinator");
+    this.signInService.observable().subscribe(user=>{
+      this.user = user
+      this.ref.detectChanges()}
+    )
     this.getTutorship();
+  }
+  signIn():void{
+    if (this.user == null){
+      this.signInService.signIn();
+    }
+    console.log(this.user);
+    this.calendarService.execute();
+  }
+  signOut():void{
+    this.signInService.signOut()
   }
   formatNormalTime(isoDate:string){
     let date = new Date(isoDate)
@@ -186,6 +205,7 @@ export class SeeSpecificWorkshipComponent implements OnInit {
       this.getTutorship();
     });
   };
+
 }
 
 
