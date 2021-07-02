@@ -2,37 +2,25 @@
 <mat-dialog-content class="mat-typography" style="display: flex; flex-direction: column">
   <mat-form-field appearance="fill">
     <mat-label>Nueva fecha</mat-label>
-    <input matInput [matDatepicker]="picker">
+    <input matInput [matDatepicker]="picker" [(ngModel)]="data.date">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-datepicker #picker ></mat-datepicker>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Ingrese nueva hora de inicio</mat-label>
-    <input matInput aria-label="Append to input" [ngxTimepicker]="toggleTimepicker"  [disableClick]="true">
+    <input matInput aria-label="Append to input" [ngxTimepicker]="toggleTimepicker"  [disableClick]="true" [(ngModel)]="data.startTime">
     <ngx-material-timepicker-toggle matSuffix [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
     <ngx-material-timepicker #toggleTimepicker [appendToInput]="true"></ngx-material-timepicker>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Ingrese nueva hora de fin</mat-label>
-    <input matInput aria-label="Append to input" [ngxTimepicker]="toggleTimepickerEnd" [disableClick]="true" >
+    <input matInput aria-label="Append to input" [ngxTimepicker]="toggleTimepickerEnd" [disableClick]="true"  [(ngModel)]="data.endTime">
     <ngx-material-timepicker-toggle matSuffix [for]="toggleTimepickerEnd"></ngx-material-timepicker-toggle>
-    <ngx-material-timepicker #toggleTimepickerEnd [appendToInput]="true"></ngx-material-timepicker>
+    <ngx-material-timepicker #toggleTimepickerEnd ></ngx-material-timepicker>
   </mat-form-field>
-<!--  <mat-form-field appearance="fill">
-    <div class="toggle-example">
-      <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
-      <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
-      <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
-    </div>
-  </mat-form-field>-->
-  <!--
-  <mat-form-field appearance ="fill">
-      <input placeholder="12hr format (default settings)" aria-label="12hr format" [ngxTimepicker]="default" readonly>
-      <ngx-material-timepicker #default></ngx-material-timepicker>
-  </mat-form-field>-->
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Guardar</button>
+  <button mat-button [mat-dialog-close]="data"  cdkFocusInitial>Guardar</button>
 </mat-dialog-actions>

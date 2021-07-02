@@ -71,6 +71,12 @@ import { LoginComponent } from './pages/login/login.component';
 import {LessonTypeApiService} from "./services/lesson-type-api.service";
 import {CourseApiService} from "./services/course.service";
 import { MainNavStudentComponent } from './pages/student/main-nav-student/main-nav-student.component';
+import {LessonStudentsApiBriService} from "./services/lesson-students-api-bri.service";
+import { ManagementOptionsComponent } from './pages/coordinator/management-options/management-options.component';
+import { ListLessonsComponent } from './pages/coordinator/list-lessons/list-lessons.component';
+import { ListTrainingsComponent } from './pages/coordinator/list-trainings/list-trainings.component';
+import {CommonModule} from "@angular/common";
+import { SpecificLessonComponent } from './pages/coordinator/specific-lesson/specific-lesson.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +119,11 @@ import { MainNavStudentComponent } from './pages/student/main-nav-student/main-n
     SeeSpecificReservationComponent,
     LoginComponent,
     MainNavStudentComponent,
-    DialogDataExampleDialog
+    DialogDataExampleDialog,
+    ManagementOptionsComponent,
+    ListLessonsComponent,
+    ListTrainingsComponent,
+    SpecificLessonComponent
   ],
   imports: [
     BrowserModule,
@@ -158,9 +168,11 @@ import { MainNavStudentComponent } from './pages/student/main-nav-student/main-n
     MatInputModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    CommonModule
   ],
   providers: [
+    LessonStudentsApiBriService,
     CoordinatorService,
     TutorApiService,
     LessonStudentsApiService,

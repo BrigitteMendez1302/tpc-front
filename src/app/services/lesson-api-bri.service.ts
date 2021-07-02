@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
-import {Lessontpc} from "../models/lessontpc";
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +31,13 @@ export class LessonApiBriService {
   }
   getLessonStudentsByLessonId(lessonId: number): Observable<any>{
     return this.http.get(this.basePath + `lessons/${lessonId}/lessonstudents`)
+  }
+
+  updateLessonByTutor(lessonId: number, start: string, end: string): Observable<any>{
+    return this.http.put(this.basePath+ `lessons/${lessonId}/filtered?start=${start}&end=${end}`, this.httpOptions);
+  }
+  getAllLessons(): Observable<any>{
+    return  this.http.get(this.basePath + `lessons`)
   }
 }
 

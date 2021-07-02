@@ -28,4 +28,9 @@ export class MainContentComponent implements OnInit {
         console.log(this.coordinatorData);
       });
   }
+  navigateToManagement(){
+    let id = Number(this.route.snapshot.paramMap.get('id'));
+    this.router.navigate([`/coordinator/${id}/management`])
+      .then(() => console.log(this.route.url) );
+  }
 }

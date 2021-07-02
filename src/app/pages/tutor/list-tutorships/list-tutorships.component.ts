@@ -22,7 +22,7 @@ export class ListTutorshipsComponent implements OnInit {
     this.week = this.getWeek(new Date());
     let start = this.formatDateIsoDate(this.week[0]);
     let end = this.formatDateIsoDate(this.week[6]);
-    let tutorId = Number(this.route.snapshot.paramMap.get('id'));
+    let tutorId = Number(this.route.snapshot.paramMap.get('id'))
 
     this.lessonsApiService.getLessonsByTutorIdAndLessonTypeIdAndInRange
     (tutorId,5,start, end)
@@ -31,15 +31,6 @@ export class ListTutorshipsComponent implements OnInit {
       console.log(this.tutorships);
     });
   }
-  /*
-  ngOnInit(): void {
-    this.newsApi.getAllSources()
-      .subscribe((data: { sources: any[]; }) => {
-        this.sources = data.sources;
-        console.log(`sources: ${this.sources}`);
-      });
-  }
-  * */
 
   navigateToSpecificWorkshop(tutorshipId: number): void {
     this.router.navigate([tutorshipId], {relativeTo: this.route})

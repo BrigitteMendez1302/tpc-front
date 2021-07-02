@@ -29,14 +29,16 @@ import {OrganizeTrainingSelectGuestsComponent} from "./pages/coordinator/organiz
 import {ModifytrainingComponent} from "./pages/coordinator/modifytraining/modifytraining.component";
 import { SeeSpecificReservationComponent } from './pages/student/see-specific-reservation/see-specific-reservation.component';
 import {LoginComponent} from "./pages/login/login.component";
+import {ListLessonsComponent} from "./pages/coordinator/list-lessons/list-lessons.component";
+import {SpecificLessonComponent} from "./pages/coordinator/specific-lesson/specific-lesson.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   { path: 'tutor/:id/main', component: MainTutorComponent },
   { path: 'tutor/:id/tutorships', component: ListTutorshipsComponent },
-  { path: 'tutor/:id/tutorships/:tutorshipId', component: SeeSpecificWorkshipComponent },
+  { path: 'tutor/:id/tutorships/:lessonId', component: SeeSpecificWorkshipComponent },
   //{ path: 'tutor/:id/tutorship/:tutorshipId/attendance', component: AttendanceComponent },
-  //{ path:'coordinator/:id/lessons/:lessonId/reports/options', component: SeeLessonOptionsComponent},
+  { path:'coordinator/:id/management', component: SeeLessonOptionsComponent},
   { path: 'coordinator/:id/main', component: MainContentComponent },
   { path:'tutor/:id/performance', component: PerformanceComponent},
   { path:'student/:id/workshops/new', component: ListWorkshopsStudentComponent},
@@ -52,16 +54,16 @@ const routes: Routes = [
   { path: 'tutor/:id/profile', component: ProfileTutorComponent },
   { path: 'coordinator/:id/profile', component: ProfileCoordinatorComponent },
   { path: 'coordinator/:id/schedule', component: AddScheduleComponent1 },
-  //{ path: 'coordinator/:id/schedule/options', component: AddScheduleComponent2 },
   { path: 'coordinator/:id/schedule/lessons/new', component: AddScheduleComponent3 },
   { path: 'coordinator/:id/schedule/trainings/new', component: OrganizetrainingComponent },
-  { path: 'coordinator/:id/schedule/options/edit', component: EditScheduleComponent },
-  { path: 'coordinator/:id/management/lessons/:lessonId/attendance', component: AssistsComponent },
   { path: 'coordinator/:id/management/trainings/:trainingId/edit', component: ModifytrainingComponent },
   { path: 'coordinator/:id/schedule/trainings/new/guests', component: OrganizeTrainingSelectGuestsComponent },
+  { path: 'coordinator/:id/management/lessons', component: ListLessonsComponent},
+  { path:'coordinator/:id/management/lessons/:lessonId', component: SpecificLessonComponent},
   { path:'coordinator/:id/management/lessons/:lessonId/comments', component: SeeLessonCommentsComponent},
   { path:'coordinator/:id/management/lessons/:lessonId/comments/:commentId', component: SeeSpecificLessonCommentComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'coordinator/:id/management/lessons/:lessonId/attendance', component: AssistsComponent },
+  { path: 'coordinator/:id/management/lessons/:lessonId/edit', component: EditScheduleComponent },
 ]
 
 

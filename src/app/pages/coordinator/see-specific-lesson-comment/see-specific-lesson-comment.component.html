@@ -4,11 +4,10 @@
   <div>
     <div class="tutoria">
       <div class="details">
-        <h3>Alumno: Brigite Mendez</h3>
-        <h3>Fecha: 15 de junio</h3>
-        <h3>Inicio de clase: 3pm</h3>
-        <h3>Fin de clase: 4pm</h3>
-        <h3>Descripcion: Muy buena clase profe, siga así</h3>
+        <h3>Alumno: {{lessonComment.student.firstName}} {{lessonComment.student.lastName}}</h3>
+        <h3>Tutor de clase: {{lessonComment.lesson.tutor.firstName}} {{lessonComment.lesson.tutor.lastName}}</h3>
+        <h3>Tema: {{lessonComment.topic}}</h3>
+        <h3>Descripcion: {{lessonComment.comment}}</h3>
       </div>
     </div>
   </div>
