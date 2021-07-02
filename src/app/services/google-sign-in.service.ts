@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import {Observable, ReplaySubject} from "rxjs";
+import {CalendarService} from "./calendar.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GoogleSignInService {
 
+  private calendarApi: CalendarService;
   // @ts-ignore
   private auth2: gapi.auth2.GoogleAuth;
   private subject = new ReplaySubject<gapi.auth2.GoogleUser>(1);
 
   constructor() {
+
     gapi.load('auth2', () => {
       this.auth2 = gapi.auth2.init({
         client_id: "437532304249-udd962otmcipe2jau8i1osbljgje1jhh.apps.googleusercontent.com",
       })
     })
+    this.calendarApi = new CalendarService();
   }
 
   public signIn() {
@@ -23,6 +27,7 @@ export class GoogleSignInService {
       scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events"
     }).then(user => {
       this.subject.next(user);
+      this.calendarApi.execute()
     }).catch(()=>{
       // @ts-ignore
       this.subject.next(null);

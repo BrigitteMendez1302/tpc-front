@@ -26,8 +26,7 @@ export class SeeSpecificWorkshipComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute,
               private lessonsApiService: LessonApiBriService, public dialog: MatDialog,
               private signInService : GoogleSignInService,
-              private ref: ChangeDetectorRef,
-              private calendarService: CalendarService) {
+              private ref: ChangeDetectorRef) {
   }
 
   getTutorship(): void{
@@ -53,11 +52,7 @@ export class SeeSpecificWorkshipComponent implements OnInit {
     this.getTutorship();
   }
   signIn():void{
-    if (this.user == null){
       this.signInService.signIn();
-    }
-    console.log(this.user);
-    this.calendarService.execute();
   }
   signOut():void{
     this.signInService.signOut()
