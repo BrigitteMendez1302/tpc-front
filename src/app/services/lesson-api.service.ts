@@ -43,8 +43,8 @@ export class LessonApiService {
     return this.http.put<Lesson>(this.basePath + `lessons/${id}`, item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-  addLesson(tutorId: number, item: any): Observable<Lesson> {
-    return this.http.post<Lesson>(this.basePath + `lessons${tutorId}`, item, this.httpOptions)
+  addLesson(item: any): Observable<Lesson> {
+    return this.http.post<Lesson>(this.basePath + `lessons`, item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
   /*getLessonById(id:String):Observable<Lesson>{

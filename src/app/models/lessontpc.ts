@@ -9,8 +9,8 @@ export interface Lessontpc{
   description: string
   meetingLink: string
   resourceLink: string
-  tutor: TutorTpc
+  tutorId: number
   vacants: number
-  lessonType: Lessontypetpc
-  course: Coursetpc
+  lessonTypeId: number
+  courseId: number
 }
