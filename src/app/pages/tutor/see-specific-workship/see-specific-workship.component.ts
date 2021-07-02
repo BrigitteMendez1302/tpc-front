@@ -188,7 +188,7 @@ export class SeeSpecificWorkshipComponent implements OnInit {
 
     dialogRef.beforeClosed().subscribe(async result => {
       console.log(`Dialog result bed:`, result);
-      let lessonId = Number(this.route.snapshot.paramMap.get('tutorshipId'));
+      let lessonId = Number(this.route.snapshot.paramMap.get('lessonId'));
       let theDate = this.formatNormalDate(result.date);
       let utcStartDate = theDate + ' ' + result.startTime + ' UTC';
       let utcEndDate = theDate + ' ' + result.endTime + ' UTC';
