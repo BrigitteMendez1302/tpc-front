@@ -8,7 +8,6 @@ import {Coursetpc} from "../models/coursetpc";
   providedIn: 'root'
 })
 export class CourseApiService {
-  // Students Endpoint
   basePath = 'https://tpc-backend-deploy.herokuapp.com/api/courses';
   constructor(private http: HttpClient) { }
   // HTTP Default Options
