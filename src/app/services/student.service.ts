@@ -12,7 +12,6 @@ export class StudentService {
   basePath = 'http://localhost:3000/api/Students';
   constructor(private http: HttpClient) { }
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
-// API Error Handling
   handleError(error: HttpErrorResponse): Observable<never> {
     if (error.error instanceof ErrorEvent) {
       console.log('An error occurred: ', error.error.message);
@@ -48,5 +47,3 @@ export class StudentService {
     return this.http.delete<Student>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }}
-
-

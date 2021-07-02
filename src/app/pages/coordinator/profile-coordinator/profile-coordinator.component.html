@@ -12,27 +12,22 @@
     <div class="description" align="left">
 
       <div>
-        <strong>{{name}}</strong>
+        <strong>{{coordinatorData.firstName}} {{coordinatorData.lastName}}</strong>
       </div>
       <br/>
       <div>
         Cargo: <br/>
-        {{ cargo }}
+        Coordinador
       </div>
       <br/>
       <div>
-        Departamento: <br/>
-        {{ departamento }}
+        Facultad: <br/>
+        {{coordinatorData.faculty.name}}
       </div>
       <br/>
       <div>
         Correo educativo: <br/>
-        {{ correo }}
-      </div>
-      <br/>
-      <div>
-        Campus: <br/>
-        {{ campus }}
+        {{coordinatorData.mail}}
       </div>
       <br/>
       Cursos:

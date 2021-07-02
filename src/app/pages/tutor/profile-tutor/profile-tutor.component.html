@@ -1,51 +1,50 @@
+
 <app-main-nav-tutor>
-<div align="center" class="title">
-  Mi perfil
-</div>
-<div align="center">
-  <mat-card class="profile-card" >
+  <div class="content">
+    <div align="center" class="title">
+      Mi perfil
+    </div>
     <div align="center">
-      <br/>
-      <div mat-card-avatar class="profile-header-image"></div>
-    </div>
+      <mat-card class="profile-card" >
+        <div align="center">
+          <br/>
+          <div mat-card-avatar class="profile-header-image"></div>
+        </div>
 
-    <div class="description" align="left">
+        <div class="description" align="left">
 
-      <div>
-        <strong>{{name}}</strong>
-      </div>
-      <br/>
-      <div>
-        Cargo: <br/>
-        {{ cargo }}
-      </div>
-      <br/>
-      <div>
-        Código: <br/>
-        {{ codigo }}
-      </div>
-      <br/>
-      <div>
-        Correo educativo: <br/>
-        {{ correo }}
-      </div>
-      <br/>
-      <div>
-        Campus: <br/>
-        {{ campus }}
-      </div>
-      <br/>
-      <div>
-        Carrera: <br/>
-        {{ carrera }}
-      </div>
-      <br/>
-      Cursos:
-      <mat-list *ngFor="let c of cursos">
-        {{c.seccion}} {{c.name}}
-      </mat-list>
-      <br/>
+          <div>
+            <strong>{{tutorData.firstName}} {{tutorData.lastName}}</strong>
+          </div>
+          <br/>
+          <div>
+            Cargo: <br/>
+            Tutor
+          </div>
+          <br/>
+          <div>
+            Código: <br/>
+            {{tutorData.account.accountNumber}}
+          </div>
+          <br/>
+          <div>
+            Correo educativo: <br/>
+            {{ tutorData.mail }}
+          </div>
+          <br/>
+          <div>
+            Carrera: <br/>
+            {{ tutorData.faculty.name }}
+
+          </div>
+          <br/>
+          Cursos:
+          <mat-list *ngFor="let c of cursos">
+            {{c.seccion}} {{c.name}}
+          </mat-list>
+          <br/>
+        </div>
+      </mat-card>
     </div>
-  </mat-card>
-</div>
+  </div>
 </app-main-nav-tutor>
