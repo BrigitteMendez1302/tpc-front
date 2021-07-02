@@ -88,6 +88,7 @@ export class ListWorkshopsStudentComponent implements OnInit {
   openDialog(object: any): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: [
+        object.id,
         object.course.name,
         object.tutor.firstName,
         object.tutor.lastName,
