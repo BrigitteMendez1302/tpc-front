@@ -31,10 +31,8 @@ export class AddScheduleComponent3 implements OnInit {
   courses: Coursetpc[] = [];
   date: Date = new Date();
   lessonData = {} as Lessontpc;
-  prueba: string = '';
+  fecha: Date = new Date;
   lessonTypes: Lessontypetpc[] = [];
-  monti: number = 0;
-  dayi: number = 0;
   hora: string = '';
   inicio_hora: string = '';
   final_hora: string = '';
@@ -68,18 +66,19 @@ export class AddScheduleComponent3 implements OnInit {
       this.final_hora = parseInt(arr[0]) < 10 ? '0'+arr[0] : arr[0];
     }
     inicio_hora = parseInt(arr[0]) < 10 ? '0'+arr[0] : arr[0];
-    inicio_hora+= ':'+arr[1]+':000Z'
+    inicio_hora+= ':'+arr[1]+':00.955Z'
     return inicio_hora;
   }
 
   formatDateTimer(date: Date, hora: string){
     let year = date.getFullYear()
-    let monti = (this.lessonData.startDate.getMonth()+1).toString()
+    let monti = (this.date.getMonth()+1).toString()
+    let dayi = this.date.getDate().toString();
     if (parseInt(monti) < 10) {
       monti = '0'+monti;
     }
 
-    let dayi = this.lessonData.startDate.getDate().toString();
+
     if (parseInt(dayi) < 10){
       dayi = '0'+dayi;
     }
@@ -90,12 +89,11 @@ export class AddScheduleComponent3 implements OnInit {
     this.lessonData.description = 'No description';
     this.inicio_hora = this.formatTimer(this.hora)
     this.final_hora = this.formatTimer(this.hora_f)
-    let stDate = this.formatDateTimer(this.lessonData.startDate, this.inicio_hora);
-    let stFDate =this.formatDateTimer(this.lessonData.startDate, this.final_hora);
-    console.log(stDate)
-    this.lessonData.startDate = new Date(stDate);
-    this.lessonData.endDate  = new Date(stFDate);
-    console.log(this.lessonData.startDate)
+    let stDate = this.formatDateTimer(this.fecha, this.inicio_hora);
+    let stFDate =this.formatDateTimer(this.fecha, this.final_hora);
+
+    this.lessonData.startDate = stDate;
+    this.lessonData.endDate = stFDate;
     //this.lessonApiService.addLesson(this.lessonData)
   }
 }

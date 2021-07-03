@@ -4,8 +4,8 @@ import {TutorTpc} from "./tutortpc";
 
 export interface Lessontpc{
   id: number
-  startDate: Date
-  endDate: Date
+  startDate: string
+  endDate: string
   description: string
   meetingLink: string
   resourceLink: string
