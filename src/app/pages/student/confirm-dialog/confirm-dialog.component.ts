@@ -16,7 +16,7 @@ export class ConfirmDialogComponent implements OnInit {
   studentId!: number;
   constructor(
     public dialogRef: MatDialogRef<ConfirmDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public workshop: Lessontpc,
+    @Inject(MAT_DIALOG_DATA) public workshop: any,
     private router: Router,private route: ActivatedRoute,
     private LessonStudenstApi: LessonStudentsApiService,
     private LessonApi: LessonApiService,

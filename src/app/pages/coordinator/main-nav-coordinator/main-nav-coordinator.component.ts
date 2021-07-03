@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class MainNavCoordinatorComponent  {
 
+  userId: any;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -28,5 +29,10 @@ export class MainNavCoordinatorComponent  {
     let id = Number(this.route.snapshot.paramMap.get('id'));
     this.router.navigate([`/coordinator/${id}/main`])
       .then(() => console.log(this.route.url) );
+  }
+  navigateToProfile(){
+    this.userId= Number(this.route.snapshot.paramMap.get('id'));
+    this.router.navigate([`tutor/${this.userId}/profile`])
+      .then(() => console.log('Navigated to see the profile'));
   }
 }
