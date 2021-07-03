@@ -15,7 +15,6 @@
           <mat-option *ngFor="let lssts of lessonTypes" value="{{lssts.id}}">{{lssts.name}}</mat-option>
         </mat-select>
       </mat-form-field>
-      {{lessonData.lessonTypeId}}
     </mat-card-content>
     <mat-card-content>
       <mat-label  class="lbl">Tutor</mat-label>
@@ -25,7 +24,6 @@
           <mat-option  *ngFor="let ttor of tutors" value="{{ttor.id}}">{{ttor.firstName}} {{ttor.lastName}}</mat-option>
         </mat-select>
       </mat-form-field>
-      {{lessonData.tutorId}}
     </mat-card-content>
     <mat-card-content>
       <mat-label  class="lbl">Curso</mat-label>
@@ -35,7 +33,6 @@
           <mat-option  *ngFor="let crs of courses" [value]="crs.id">{{crs.name}}</mat-option>
         </mat-select>
       </mat-form-field>
-      {{lessonData.courseId}}
     </mat-card-content>
     <mat-card-content>
       <mat-label  class="lbl">Fecha</mat-label>
@@ -72,4 +69,3 @@
   <mat-button-toggle  class="der-button" (click)="createLesson()">Guardar</mat-button-toggle>
 </div>
 </app-main-nav-coordinator>
-@routerLink="/" routerLinkActive="active"
