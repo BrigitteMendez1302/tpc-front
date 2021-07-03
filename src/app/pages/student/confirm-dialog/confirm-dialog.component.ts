@@ -4,6 +4,8 @@ import {Lessontpc} from "../../../models/lessontpc";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LessonStudentsApiService} from "../../../services/lesson-student-api.service";
 import {LessonStudent} from "../../../models/lesson-student";
+import {LessonApiService} from "../../../services/lesson-api.service";
+import {StudentService} from "../../../services/student.service";
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -16,7 +18,9 @@ export class ConfirmDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<ConfirmDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public workshop: Lessontpc,
     private router: Router,private route: ActivatedRoute,
-    private LessonStudenstApi: LessonStudentsApiService) {
+    private LessonStudenstApi: LessonStudentsApiService,
+    private LessonApi: LessonApiService,
+    private StudentApi: StudentService) {
     this.studentId= Number(this.route.snapshot.paramMap.get('id'));
   }
 
@@ -28,10 +32,10 @@ export class ConfirmDialogComponent implements OnInit {
   }
 
   inscribirse(workshopId: number): void {
-    const newlessonStudent = {studentId: this.studentId, lessonId: workshopId}
+    const newlessonStudent = {studentId: this.studentId, lessonId: workshopId, topic: "", comment: "", qualification: 0, complaint: false, assistance: false}
      this.LessonStudenstApi.addLessonStudent(newlessonStudent)
        .subscribe((response: any ) =>{
-         console.log(response.content);
+
        });
   }
 

@@ -2,8 +2,8 @@ import {Student} from "./student";
 import {Lessontpc} from "./lessontpc";
 
 export interface LessonStudent {
-  studentId: Student
-  lessonId: Lessontpc
+  studentId: number
+  lessonId: number
   topic: string
   comment: string
   qualification: number

@@ -8,10 +8,8 @@ import { LessonStudent } from '../models/lesson-student';
   providedIn: 'root'
 })
 export class LessonStudentsApiService {
-  basePath ='https://tpc-backend-deploy.herokuapp.com/api/';
-
+  basePath = 'https://tpc-backend-deploy.herokuapp.com/api/';
   constructor(private http:HttpClient) { }
-
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
 
   handleError(error: HttpErrorResponse): Observable<never> {
@@ -24,13 +22,9 @@ export class LessonStudentsApiService {
     return throwError('Something happened with request, please try again later.');
   }
 
-  getAllLessonStudents(): Observable<LessonStudent>{
-    return this.http.get<LessonStudent>(this.basePath)
-      .pipe(retry(2), catchError(this.handleError));
-  }
   // Create Lesson Student
   addLessonStudent(item: any): Observable<LessonStudent> {
-    return this.http.post<LessonStudent>(`${this.basePath}lessons/{lessonId}/students/{studentId}`, JSON.stringify(item), this.httpOptions)
+    return this.http.post<LessonStudent>(`${this.basePath}lessonstudents`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
