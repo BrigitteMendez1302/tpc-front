@@ -12,9 +12,9 @@
 
       <a  mat-list-item (click)="navigateToMain()"> Inicio  <span class="default-spacer"></span></a>
       <a mat-list-item (click)="navigateToManagement()">Gestionar mis horarios<span class="default-spacer"></span></a>
-      <a mat-list-item routerLink="coordinator/:id/schedule" routerLinkActive="active" (click)="drawer.toggle()"> Programar horarios   <span class="default-spacer"></span></a>
+      <a mat-list-item (click)="navigateToSchedule()"> Programar horarios   <span class="default-spacer"></span></a>
       <a mat-list-item href="#">Ver quejas <span class="default-spacer"></span></a>
-      <a mat-list-item href="#">Enviar correo <span class="default-spacer"></span></a>
+      <a mat-list-item href="#">Enviar aviso <span class="default-spacer"></span></a>
       <br><br><br>
       <a class="subtitulo">Consultas</a>
       <br>
@@ -36,7 +36,8 @@
       </button>
       <span class="default-spacer"></span>
 
-      <button mat-icon-button color="warn" class="background" aria-label="Example icon button with a heart icon">
+      <button mat-icon-button color="warn" class="background" aria-label="Example icon button with a heart icon"
+      (click)="navigateToProfile()">
         <mat-icon class="icon">person</mat-icon>
       </button>
     </mat-toolbar>

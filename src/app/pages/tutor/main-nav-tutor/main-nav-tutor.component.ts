@@ -30,9 +30,19 @@ export class MainNavTutorComponent{
     this.router.navigate([`/tutor/${id}/tutorships`])
       .then(() => console.log(this.route.url) );
   }
+  navigateToWorkshops(){
+    let id = Number(this.route.snapshot.paramMap.get('id'));
+    this.router.navigate([`/tutor/${id}/tutorships`])
+      .then(() => console.log(this.route.url) );
+  }
   navigateToProfile(){
     this.userId= Number(this.route.snapshot.paramMap.get('id'));
     this.router.navigate([`tutor/${this.userId}/profile`])
+      .then(() => console.log('Navigated to see the profile'));
+  }
+  navigateToPerformance(){
+    this.userId= Number(this.route.snapshot.paramMap.get('id'));
+    this.router.navigate([`tutor/${this.userId}/performance`])
       .then(() => console.log('Navigated to see the profile'));
   }
 }

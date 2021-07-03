@@ -35,4 +35,9 @@ export class MainNavCoordinatorComponent  {
     this.router.navigate([`tutor/${this.userId}/profile`])
       .then(() => console.log('Navigated to see the profile'));
   }
+  navigateToSchedule(){
+    let id = Number(this.route.snapshot.paramMap.get('id'));
+    this.router.navigate([`/coordinator/${id}/schedule`])
+      .then(() => console.log(this.route.url) );
+  }
 }
