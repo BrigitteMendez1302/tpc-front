@@ -11,7 +11,6 @@
     </div>
 
     <div class="sub-container">
-
       <mat-nav-list>
         <mat-list-item style="background-color: white; height: 100px; margin-bottom: 2rem">
           <p mat-line>Mis Talleres</p>
@@ -23,7 +22,6 @@
             <a href="https://www.w3schools.com" class="btn-principal">Ver más</a>
           </div>
         </mat-list-item>
-
         <mat-list-item style="background-color: white; height: 100px">
           <p mat-line>Mis Tutorías</p>
           <div>
@@ -37,6 +35,31 @@
       </mat-nav-list>
     </div>
   </div>
-
+  <div>
+    <h2>Mis Talleres</h2>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let course of courses" class="list-principal">
+        <p mat-line>{{ course.name }}</p>
+        <div class="flex">
+          <p style="font-size: xx-large">getValue()</p>
+          <span class="material-icons" style="color: #FFE600">star_rate</span>
+          <a href="https://www.w3schools.com" class="btn-principal">Ver más</a>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+  <div>
+    <h2>Mis Tutorías</h2>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let course of courses" class="list-principal">
+        <p mat-line>{{ course.name }}</p>
+        <div class="flex">
+          <p style="font-size: xx-large">4.5</p>
+          <span class="material-icons" style="color: #FFE600">star_rate</span>
+          <a href="https://www.w3schools.com" class="btn-principal">Ver más</a>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
 </section>
 </app-main-nav-tutor>

@@ -4,9 +4,9 @@ import { ConfirmDialogComponent} from "../confirm-dialog/confirm-dialog.componen
 import { MatSnackBar } from "@angular/material/snack-bar";
 import {LessonApiService} from "../../../services/lesson-api.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {LessonTypeApiService} from "../../../services/lesson-type-api.service";
 import {TutorApiService} from "../../../services/tutor-api.service";
 import {CourseApiService} from "../../../services/course.service";
+import {Lessontpc} from "../../../models/lessontpc";
 
 @Component({
   selector: 'app-list-workshops-student',
@@ -17,7 +17,7 @@ export class ListWorkshopsStudentComponent implements OnInit {
   courses: Array<any> = [];
   tutors: Array<any> = [];
   workshops: Array<any> = [];
-  week: Array<any> = [];
+
   constructor(public dialog: MatDialog, public snackBar: MatSnackBar,
               private router: Router, private route: ActivatedRoute,
               private lessonsApiService: LessonApiService,
@@ -85,15 +85,9 @@ export class ListWorkshopsStudentComponent implements OnInit {
   }
 
   //Dialog method
-  openDialog(object: any): void {
+  openDialog(object: Lessontpc): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      data: [
-        object.course.name,
-        object.tutor.firstName,
-        object.tutor.lastName,
-        this.formatAMPM(object.startDate,true),
-        this.formatAMPM(object.endDate,false),
-      ]
+      data: object
     });
     dialogRef.afterClosed().subscribe(response =>{
       console.log(response);
