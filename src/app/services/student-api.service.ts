@@ -24,4 +24,5 @@ export class StudentApiService {
     return this.http.get<any>(this.basePath+`students/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
 }

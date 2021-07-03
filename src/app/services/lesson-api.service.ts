@@ -2,14 +2,15 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Lesson } from '../pages/student/interfaces/lesson.interface';
+import {Lesson} from '../pages/student/interfaces/lesson.interface'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LessonApiService {
 
-  basePath ='https://tpc-backend-deploy.herokuapp.com/api/';
+  basePath ='https://tpc-backend-deploy.herokuapp.com/api/lessons';
   constructor(private http:HttpClient) { }
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
 
@@ -47,8 +48,7 @@ export class LessonApiService {
     return this.http.post<Lesson>(this.basePath + `lessons${tutorId}`, item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-  /*getLessonById(id:String):Observable<Lesson>{
-    return this.http.get<Lesson>(`${this.basePath}/${id}`)*/
+
 
   getLessonById(id:number):Observable<Lesson>{
     return this.http.get<Lesson>(`${this.basePath}lessons/${id}`)

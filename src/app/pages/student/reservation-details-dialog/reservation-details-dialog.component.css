@@ -1,0 +1,15 @@
+.btn-principal {
+  border-radius: 5px;
+  border-color: #1F86FF;
+  width: 45%;
+}
+.container-1 {
+  background-color: #F7F9FA;
+  margin: 1rem;
+  padding: 1rem;
+  font-weight: lighter;
+  display: block;
+}
+p{
+  margin-left: 1rem;
+}

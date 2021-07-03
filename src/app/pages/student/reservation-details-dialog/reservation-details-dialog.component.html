@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <h3 style="font-weight: normal" align="center">{{workshop.title}}</h3>
+  <p>Detalles:</p>
+  <div class="container-1">
+    <p>{{ workshop.content }}</p>
+  </div>
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-stroked-button color="white" class="btn-principal" (click)="onClickNO()">Cancelar</button>
+  <button mat-stroked-button color="white" class="btn-principal" (click)="onClickYes()">Confirmar</button>
+</div>
