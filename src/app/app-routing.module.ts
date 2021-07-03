@@ -32,6 +32,8 @@ import {LoginComponent} from "./pages/login/login.component";
 import {ListLessonsComponent} from "./pages/coordinator/list-lessons/list-lessons.component";
 import {SpecificLessonComponent} from "./pages/coordinator/specific-lesson/specific-lesson.component";
 import {ListTrainingsComponent} from "./pages/coordinator/list-trainings/list-trainings.component";
+import {ShowSuggestionsComponent} from "./pages/coordinator/show-suggestions/show-suggestions.component";
+import {ReserveLessonComponent} from "./pages/student/reserve-lesson/reserve-lesson.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -69,6 +71,9 @@ const routes: Routes = [
   { path: 'coordinator/:id/management/lessons/:lessonId/edit', component: EditScheduleComponent },
   {path: 'coordinator/:id/management/trainings', component: ListTrainingsComponent},
   { path: 'coordinator/:id/management/trainings/:trainingId/edit', component: ModifytrainingComponent },
+  { path: 'coordinator/:id/suggestions', component: ShowSuggestionsComponent},
+  { path: 'student/:id/reserve-lesson', component: ReserveLessonComponent},
+  { path: 'login', component: LoginComponent},
 ]
 
 

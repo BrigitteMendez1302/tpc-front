@@ -86,6 +86,9 @@ import { ListTrainingsComponent } from './pages/coordinator/list-trainings/list-
 import {CommonModule} from "@angular/common";
 import { SpecificLessonComponent } from './pages/coordinator/specific-lesson/specific-lesson.component';
 import {ReservationDetailsDialogComponent} from "./pages/student/reservation-details-dialog/reservation-details-dialog.component";
+import { ShowSuggestionsComponent } from './pages/coordinator/show-suggestions/show-suggestions.component';
+import { ReserveLessonComponent } from './pages/student/reserve-lesson/reserve-lesson.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "437532304249-udd962otmcipe2jau8i1osbljgje1jhh.apps.googleusercontent.com",
@@ -142,7 +145,9 @@ let gapiClientConfig: NgGapiClientConfig = {
     ListLessonsComponent,
     ListTrainingsComponent,
     SpecificLessonComponent,
-    ReservationDetailsDialogComponent
+    ReservationDetailsDialogComponent,
+    ShowSuggestionsComponent,
+    ReserveLessonComponent
   ],
   imports: [
     BrowserModule,
@@ -193,7 +198,36 @@ let gapiClientConfig: NgGapiClientConfig = {
       provide: NG_GAPI_CONFIG,
       useValue: gapiClientConfig
     }),
-  ],
+        MatGridListModule,
+        MatCheckboxModule,
+        HttpClientModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatIconModule,
+        MatCardModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        MatTableModule,
+        MatPaginatorModule,
+        HttpClientModule,
+        MatTooltipModule,
+        MatButtonToggleModule,
+        ReactiveFormsModule,
+        MatListModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        NgxMaterialTimepickerModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        MatButtonToggleModule,
+        MatStepperModule
+    ],
   providers: [
     LessonStudentsApiBriService,
     CoordinatorService,

@@ -37,7 +37,7 @@ export class SeeSpecificReservationComponent implements OnInit {
       width: '300px',
       height:'300px',
       data: {
-        title: "¿Desea cancelar este " + this.lesson.lessonType + "?", content: "No podrá deshacer esta opción luego",
+        title: "¿Desea cancelar este " + this.lesson.lessonTypeId + "?", content: "No podrá deshacer esta opción luego",
         id: this.id
       }
     });

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
-import {LessonType} from "../models/lessontypetpc";
+import {Lessontypetpc} from "../models/lessontypetpc";
 
 @Injectable({
   providedIn: 'root'
@@ -22,13 +22,13 @@ export class LessonTypeApiService {
   }
 
   // Get LessonType by Id
-  getLessonTypeById(id: number): Observable<LessonType> {
-    return this.http.get<LessonType>(`${this.basePath}lessontypes/${id}`, this.httpOptions)
+  getLessonTypeById(id: number): Observable<Lessontypetpc> {
+    return this.http.get<Lessontypetpc>(`${this.basePath}lessontypes/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
   // Get LessonType Data
-  getAllLessonTypes(): Observable<LessonType>{
-    return this.http.get<LessonType>(`${this.basePath}lessontypes`)
+  getAllLessonTypes(): Observable<any>{
+    return this.http.get<any>(`${this.basePath}lessontypes`)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

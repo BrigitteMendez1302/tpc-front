@@ -22,8 +22,8 @@ export class TutorApiService {
   }
 
   // Get Tutor Data
-  getAllTutors(): Observable<TutorTpc>{
-    return this.http.get<TutorTpc>(`${this.basePath}tutors`)
+  getAllTutors(): Observable<any>{
+    return this.http.get<any>(`${this.basePath}tutors`)
       .pipe(retry(2), catchError(this.handleError));
   }
   /*getUserById(id: number):Observable<TutorTpc>{

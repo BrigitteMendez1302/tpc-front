@@ -11,27 +11,35 @@
       <mat-label class="lbl">Tipo de clase</mat-label>
       <mat-form-field appearance="fill">
         <mat-label>Seleccione el tipo</mat-label>
-        <select matNativeControl required *ngFor="let edit of editS">
-          <option></option>
-          <option value="prog1">{{edit.tipo}}</option>
-        </select>
+        <mat-select matNativeControl [(value)]="lstype">
+          <mat-option *ngFor="let lssts of lessonTypes" [value]="lssts">{{lssts.name}}</mat-option>
+
+        </mat-select>
       </mat-form-field>
     </mat-card-content>
     <mat-card-content>
       <mat-label  class="lbl">Tutor</mat-label>
       <mat-form-field appearance="fill">
         <mat-label>Seleccione el tutor</mat-label>
-        <select matNativeControl required *ngFor="let edit of editS">
-          <option></option>
-          <option value="prog1">{{edit.tutor}}</option>
-        </select>
+        <mat-select matNativeControl [(value)]="lessonData.tutorId">
+          <mat-option  *ngFor="let ttor of tutors" value="{{ttor.id}}">{{ttor.firstName}} {{ttor.lastName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label  class="lbl">Curso</mat-label>
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione el curso</mat-label>
+        <mat-select [(value)]="lessonData.courseId">
+          <mat-option  *ngFor="let crs of courses" [value]="crs.id">{{crs.name}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </mat-card-content>
     <mat-card-content>
       <mat-label  class="lbl">Fecha</mat-label>
       <mat-form-field appearance="fill">
         <mat-label>Escoja la fecha</mat-label>
-        <input matInput [matDatepicker]="picker"  [(ngModel)]="date">
+        <input matInput [matDatepicker]="picker"  [(ngModel)]="fecha">
         <mat-datepicker-toggle matSuffix [for]="picker">
           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
         </mat-datepicker-toggle>
@@ -42,7 +50,7 @@
       <mat-label  class="lbl">Inicio de clase</mat-label>
       <mat-form-field appearance="fill">
         <mat-label>Ingrese hora de inicio</mat-label>
-        <input matInput [ngxTimepicker]="pickerx">
+        <input matInput [ngxTimepicker]="pickerx" [(ngModel)]="hora">
         <ngx-material-timepicker #pickerx></ngx-material-timepicker>
       </mat-form-field>
     </mat-card-content>
@@ -50,7 +58,7 @@
       <mat-label  class="lbl">Fin de clase</mat-label>
       <mat-form-field appearance="fill">
         <mat-label>Ingrese hora de cierre</mat-label>
-        <input matInput [ngxTimepicker]="pickery">
+        <input matInput [ngxTimepicker]="pickery" [(ngModel)]="hora_f">
         <ngx-material-timepicker #pickery></ngx-material-timepicker>
       </mat-form-field>
     </mat-card-content>
@@ -59,6 +67,6 @@
 
 <div align="right" class="btn-below">
   <mat-button-toggle routerLink="/" routerLinkActive="active">Cancelar</mat-button-toggle>
-  <mat-button-toggle routerLink="/" routerLinkActive="active" class="der-button">Guardar</mat-button-toggle>
+  <mat-button-toggle  class="der-button" (click)="createLesson()">Guardar</mat-button-toggle>
 </div>
 </app-main-nav-coordinator>
