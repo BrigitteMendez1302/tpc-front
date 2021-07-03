@@ -40,6 +40,9 @@
       (click)="navigateToProfile()">
         <mat-icon class="icon">person</mat-icon>
       </button>
+      <button mat-icon-button color="warn" class="background" aria-label="Example icon button with a heart icon" (click)="logout()">
+        <mat-icon class="icon">logout</mat-icon>
+      </button>
     </mat-toolbar>
     <router-outlet></router-outlet>
     <ng-content>

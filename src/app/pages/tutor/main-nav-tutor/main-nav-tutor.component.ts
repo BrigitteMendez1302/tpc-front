@@ -45,4 +45,8 @@ export class MainNavTutorComponent{
     this.router.navigate([`tutor/${this.userId}/performance`])
       .then(() => console.log('Navigated to see the profile'));
   }
+  logout(){
+    this.router.navigate([`/login`])
+      .then(() => console.log('Navigated to home'));
+  }
 }

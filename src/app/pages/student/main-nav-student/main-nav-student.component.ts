@@ -23,4 +23,8 @@ export class MainNavStudentComponent {
     this.router.navigate([`tutor/${this.userId}/profile`])
       .then(() => console.log('Navigated to see the profile'));
   }
+  logout(){
+    this.router.navigate([`/login`])
+      .then(() => console.log('Navigated to home'));
+  }
 }

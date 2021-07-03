@@ -40,4 +40,8 @@ export class MainNavCoordinatorComponent  {
     this.router.navigate([`/coordinator/${id}/schedule`])
       .then(() => console.log(this.route.url) );
   }
+  logout(){
+    this.router.navigate([`/login`])
+      .then(() => console.log('Navigated to home'));
+  }
 }
