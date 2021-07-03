@@ -37,6 +37,7 @@ export class AddScheduleComponent3 implements OnInit {
   inicio_hora: string = '';
   final_hora: string = '';
   hora_f: string = '';
+  lstype = {} as Lessontypetpc;
   constructor(private tutorApiService: TutorApiService, private lessonTypeApiService: LessonTypeApiService, private courseApiService: CourseApiService, private lessonApiService: LessonApiService ,private router: Router, private route: ActivatedRoute) {
 
   }
@@ -91,7 +92,10 @@ export class AddScheduleComponent3 implements OnInit {
     this.final_hora = this.formatTimer(this.hora_f)
     let stDate = this.formatDateTimer(this.fecha, this.inicio_hora);
     let stFDate =this.formatDateTimer(this.fecha, this.final_hora);
-
+    console.log(this.lstype.id, this.lstype.vacants, this.lstype.quantity)
+    this.lessonData.lessonTypeId = this.lstype.id;
+    this.lessonData.vacants = this.lstype.quantity;
+    console.log(this.lessonData.lessonTypeId, this.lessonData.vacants)
     this.lessonData.startDate = stDate;
     this.lessonData.endDate = stFDate;
     //this.lessonApiService.addLesson(this.lessonData)

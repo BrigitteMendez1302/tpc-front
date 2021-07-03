@@ -11,8 +11,9 @@
       <mat-label class="lbl">Tipo de clase</mat-label>
       <mat-form-field appearance="fill">
         <mat-label>Seleccione el tipo</mat-label>
-        <mat-select matNativeControl [(value)]="lessonData.lessonTypeId">
-          <mat-option *ngFor="let lssts of lessonTypes" value="{{lssts.id}}">{{lssts.name}}</mat-option>
+        <mat-select matNativeControl [(value)]="lstype">
+          <mat-option *ngFor="let lssts of lessonTypes" [value]="lssts">{{lssts.name}}</mat-option>
+
         </mat-select>
       </mat-form-field>
     </mat-card-content>
