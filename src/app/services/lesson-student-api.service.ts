@@ -2,16 +2,18 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { LessonStudent } from '../pages/tutor/interfaces/lesson-student.interface';
+import { LessonStudent } from '../models/lesson-student';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LessonStudentsApiService {
-  basePath ='http://localhost:3000/api/LessonStudents';
+  basePath ='https://tpc-backend-deploy.herokuapp.com/api/';
+
   constructor(private http:HttpClient) { }
+
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
-  
+
   handleError(error: HttpErrorResponse): Observable<never> {
     if (error.error instanceof ErrorEvent) {
       console.log('An error occurred: ', error.error.message);
@@ -24,6 +26,11 @@ export class LessonStudentsApiService {
 
   getAllLessonStudents(): Observable<LessonStudent>{
     return this.http.get<LessonStudent>(this.basePath)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Create Lesson Student
+  addLessonStudent(item: any): Observable<LessonStudent> {
+    return this.http.post<LessonStudent>(`${this.basePath}lessons/{lessonId}/students/{studentId}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

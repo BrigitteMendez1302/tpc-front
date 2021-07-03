@@ -2,10 +2,14 @@
   <h3 style="font-weight: normal" align="center">¿Desea inscribirse en este taller?</h3>
   <p>Detalles:</p>
   <div class="container-1">
-    <p>{{ workshopData }}</p>
+    <p>Curso: {{ workshop.course.name }}</p>
+    <p>Tutor: {{ workshop.tutor.firstName }} {{ workshop.tutor.lastName }}</p>
+    <p>Descripción: {{ workshop.description }}</p>
+    <p>Fecha: {{ formatAMPM(workshop.startDate, true) }} -  {{ formatAMPM(workshop.endDate, false) }}</p>
+    <p>Vacantes: {{ workshop.vacants }}</p>
   </div>
 </div>
 <div mat-dialog-actions align="center">
-  <button mat-stroked-button color="white" class="btn-principal" (click)="onClickNO()">Cancelar</button>
-  <button mat-stroked-button color="white" class="btn-principal" [mat-dialog-close]="true">Inscribirse</button>
+  <button mat-stroked-button color="white" class="btn-principal" (click)="cancelar()">Cancelar</button>
+  <button mat-stroked-button color="white" class="btn-principal" (click)="inscribirse(workshop.id)" [mat-dialog-close]="true">Inscribirse</button>
 </div>
