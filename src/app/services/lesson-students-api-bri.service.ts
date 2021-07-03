@@ -27,4 +27,7 @@ export class LessonStudentsApiBriService {
   getCommentByLessonIdAndStudentId(lessonId: number, studentId: number){
     return this.http.get(this.basePath+`lessons/${lessonId}/students/${studentId}`)
   }
+  updateLessonStudentAttendance(lessonId: number, studentId: number, attendance: boolean){
+    return this.http.put(this.basePath+`lessonstudents/${lessonId}/students/${studentId}?attendance=${attendance}`,this.httpOptions);
+  }
 }

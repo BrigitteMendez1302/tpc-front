@@ -6,6 +6,7 @@ import { LessonStudentsApiService } from '../../../services/lesson-student-api.s
 import {ActivatedRoute, Router} from "@angular/router";
 import {LessonApiBriService} from "../../../services/lesson-api-bri.service";
 import {MatPaginator} from "@angular/material/paginator";
+import {LessonStudentsApiBriService} from "../../../services/lesson-students-api-bri.service";
 
 
 @Component({
@@ -14,13 +15,14 @@ import {MatPaginator} from "@angular/material/paginator";
   styleUrls: ['./attendance.component.css'],
 })
 export class AttendanceComponent implements OnInit, AfterViewInit{
-  displayedColumns: string[] = ['assistance', 'fullName', 'mail'];
+  displayedColumns: string[] = ['fullName', 'mail', 'assistance'];
   dataSource = new MatTableDataSource<any>();
   selection = new SelectionModel<any>(true, []);
   @ViewChild(MatPaginator) paginator: any;
 
   constructor(private router: Router, private route: ActivatedRoute,
-              private lessonsApiService: LessonApiBriService) {
+              private lessonsApiService: LessonApiBriService,
+              private lessonStudentsApi: LessonStudentsApiBriService) {
 
   }
   ngAfterViewInit() {
@@ -70,5 +72,20 @@ export class AttendanceComponent implements OnInit, AfterViewInit{
       if (p.assistance)
         this.selection.toggle(p);
     })
+  }
+  save(){
+    let i = 0;
+    let lessonId;
+    let studentId;
+
+    for (let lessonStudent of this.dataSource.data){
+      console.log("Id", lessonStudent.lesson.id);
+      console.log("student id", lessonStudent.student.id);
+      console.log("attendee", lessonStudent.assistance)
+      this.lessonStudentsApi.updateLessonStudentAttendance
+      (lessonStudent.lesson.id, lessonStudent.student.id, lessonStudent.assistance).subscribe(
+        response => {console.log(response);  }
+      );
+    }
   }
 }

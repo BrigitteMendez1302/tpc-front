@@ -141,7 +141,6 @@ export class SeeSpecificWorkshipComponent implements OnInit {
       this.getTutorship();
     });
   };
-
 }
 
 export interface TutorshipData {
