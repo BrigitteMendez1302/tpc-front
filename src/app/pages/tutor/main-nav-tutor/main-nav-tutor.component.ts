@@ -32,7 +32,7 @@ export class MainNavTutorComponent{
   }
   navigateToWorkshops(){
     let id = Number(this.route.snapshot.paramMap.get('id'));
-    this.router.navigate([`/tutor/${id}/tutorships`])
+    this.router.navigate([`/tutor/${id}/workshops`])
       .then(() => console.log(this.route.url) );
   }
   navigateToProfile(){

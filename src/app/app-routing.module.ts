@@ -73,7 +73,6 @@ const routes: Routes = [
   { path: 'coordinator/:id/management/trainings/:trainingId/edit', component: ModifytrainingComponent },
   { path: 'coordinator/:id/suggestions', component: ShowSuggestionsComponent},
   { path: 'student/:id/reserve-lesson', component: ReserveLessonComponent},
-  { path: 'login', component: LoginComponent},
 ]
 
 
