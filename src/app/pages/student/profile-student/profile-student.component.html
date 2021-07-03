@@ -12,27 +12,22 @@
     <div class="description" align="left">
 
       <div>
-        <strong>{{name}}</strong>
+        <strong>{{studentData.firstName}} {{studentData.lastName}} </strong>
       </div>
       <br/>
       <div>
         Código: <br/>
-        {{ codigo }}
+        {{studentData.account.accountNumber}}
       </div>
       <br/>
       <div>
         Correo educativo: <br/>
-        {{ correo }}
-      </div>
-      <br/>
-      <div>
-        Campus: <br/>
-        {{ campus }}
+        {{ studentData.mail }}
       </div>
       <br/>
       <div>
         Carrera: <br/>
-        {{ carrera }}
+        {{ studentData.career.name }}
       </div>
       <br/>
     </div>
