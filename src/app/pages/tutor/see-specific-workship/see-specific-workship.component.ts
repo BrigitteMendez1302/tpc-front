@@ -22,6 +22,7 @@ export class SeeSpecificWorkshipComponent implements OnInit {
   gapi: any;
   isLoaded: boolean = false;
   user: gapi.auth2.GoogleUser | undefined;
+  haveLink: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute,
               private lessonsApiService: LessonApiBriService, public dialog: MatDialog,
@@ -49,7 +50,8 @@ export class SeeSpecificWorkshipComponent implements OnInit {
     this.getTutorship();
   }
   signIn():void{
-      this.signInService.signIn();
+      this.signInService.signIn(this.tutorship.startDate, this.tutorship.endDate, this.tutorship.description);
+      this.haveLink=true;
   }
   signOut():void{
     this.signInService.signOut()

@@ -1,6 +1,7 @@
 <app-main-nav-tutor>
 <div class="container">
-  <h1>Mis tutorías</h1>
+  <h1 *ngIf="isTutorship">Mis tutorías</h1>
+  <h1 *ngIf="isWorkshop">Mis talleres</h1>
   <mat-list role="list">
     <mat-list-item class="m-list-item" role="listitem" *ngFor="let tutorship of tutorships">
       <div class="flex">

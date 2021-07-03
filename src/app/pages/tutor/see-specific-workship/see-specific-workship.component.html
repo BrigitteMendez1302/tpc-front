@@ -13,7 +13,8 @@
     <div class="buttons">
       <a mat-button class="mat-button-text btn" color="primary" (click)="navigateToAttendance()">TOMAR ASISTENCIA</a>
       <a mat-button class="mat-button-text btn" color="primary" (click)="openDialog()" >MODIFICAR</a>
-      <a mat-button class="mat-button-text btn" color="primary" (click)="signIn()" >INGRESAR A LA SESIÓN</a>
+      <a mat-button class="mat-button-text btn" color="primary" (click)="signIn()" >GENERAR LINK</a>
+      <a *ngIf="haveLink" mat-button class="mat-button-text btn" color="primary"  [href]="tutorship.meetingLink" >INGRESAR A LA SESIÓN</a>
     </div>
   </div>
 </div>

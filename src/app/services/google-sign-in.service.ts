@@ -22,12 +22,12 @@ export class GoogleSignInService {
     this.calendarApi = new CalendarService();
   }
 
-  public signIn() {
+  public signIn(startDate: string, endDate: string, summary: string) {
     this.auth2.signIn({
       scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events"
     }).then(user => {
       this.subject.next(user);
-      this.calendarApi.execute()
+      this.calendarApi.execute(startDate, endDate, summary);
     }).catch(()=>{
       // @ts-ignore
       this.subject.next(null);

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {LessonApiBriService} from "./lesson-api-bri.service";
 
 @Injectable({
   providedIn: 'root'
@@ -16,39 +17,42 @@ export class CalendarService {
     })
   }
 
-  public execute() : Promise<gapi.client.calendar.Events>{
-    return new Promise(resolve => {
-      gapi.client.calendar.events.insert({
-        "calendarId": "primary",
-        "conferenceDataVersion": 1,
-        "sendNotifications": true,
-        "sendUpdates": "all",
-        "resource": {
-          "conferenceData": {
-            "createRequest": {
-              "requestId": "sample123",
-              "conferenceSolutionKey": {
-                "type": "hangoutsMeet"
-              }
+  public execute(startDate: string, endDate: string, summary: string) : Promise<gapi.client.calendar.Events>{
+    let event = {
+      "calendarId": "primary",
+      "conferenceDataVersion": 1,
+      "sendNotifications": true,
+      "sendUpdates": "all",
+      "resource": {
+        "conferenceData": {
+          "createRequest": {
+            "requestId": "sample123",
+            "conferenceSolutionKey": {
+              "type": "hangoutsMeet"
             }
-          },
-          "end": {
-            "dateTime": "2021-07-05T12:43:47.805Z"
-          },
-          "start": {
-            "dateTime": "2021-07-05T06:43:47.805Z"
-          },
-          "anyoneCanAddSelf": true,
-          "description": "reunion de prueba, ahora para open",
-          "attendees": [
-            {"email": "brigittemmendezpastor@gmail.com"},
-            {"email": "julissakarol2012@gmail.com"},
-            {"email": "lucas.moreno.olivos@gmail.com"},
-          ],
-          "summary": "la reu de patroness"
-        }
-      }).then(function(response) {
+          }
+        },
+        "end": {
+          "dateTime": "2021-07-05T12:43:47.805Z"
+        },
+        "start": {
+          "dateTime": "2021-07-05T06:43:47.805Z"
+        },
+        "anyoneCanAddSelf": true,
+        "description": "",
+        "attendees": [
+        ],
+        "summary": " "
+      }
+    }
+    event["resource"]["end"]["dateTime"] = endDate;
+    event["resource"]["start"]["dateTime"] = startDate;
+    event["resource"]["summary"] = summary;
+
+    return new Promise(resolve => {
+      gapi.client.calendar.events.insert(event).then(function(response) {
           console.log("Response", response);
+
         },
         function(err) { console.error("Execute error", err); });
     }

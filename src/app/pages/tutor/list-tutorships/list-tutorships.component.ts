@@ -11,6 +11,8 @@ export class ListTutorshipsComponent implements OnInit {
 
   tutorships: Array<any> = [];
   week:Array<any>=[];
+  isTutorship: boolean = true;
+  isWorkshop: boolean = true;
   constructor(private router: Router, private route: ActivatedRoute,
               private lessonsApiService: LessonApiBriService) {
   }
@@ -25,8 +27,17 @@ export class ListTutorshipsComponent implements OnInit {
     let tutorId = Number(this.route.snapshot.paramMap.get('id'))
     console.log(start);
     console.log(end);
+    let lessonType;
+    this.isTutorship = this.router.url.includes("tutorships");
+    this.isWorkshop = this.router.url.includes("workshops");
+    if (this.isTutorship){
+      lessonType = 5;
+    }
+    else{
+      lessonType = 1
+    }
     this.lessonsApiService.getLessonsByTutorIdAndLessonTypeIdAndInRange
-    (tutorId,5,start, end)
+    (tutorId,lessonType,start, end)
       .subscribe((response: any ) =>{
       this.tutorships = response.content;
       console.log(this.tutorships);

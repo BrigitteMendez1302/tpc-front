@@ -29,7 +29,7 @@ export class AttendanceComponent implements OnInit, AfterViewInit{
     this.dataSource.paginator = this.paginator;
   }
   getAllStudents(): void {
-    let lessonId = Number(this.route.snapshot.paramMap.get('tutorshipId'));
+    let lessonId = Number(this.route.snapshot.paramMap.get('lessonId'));
     this.lessonsApiService.getLessonStudentsByLessonId(lessonId).subscribe((response: any) => {
       this.dataSource.data = response.content;
       console.log(response.content);
