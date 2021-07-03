@@ -85,6 +85,7 @@ import { ListLessonsComponent } from './pages/coordinator/list-lessons/list-less
 import { ListTrainingsComponent } from './pages/coordinator/list-trainings/list-trainings.component';
 import {CommonModule} from "@angular/common";
 import { SpecificLessonComponent } from './pages/coordinator/specific-lesson/specific-lesson.component';
+import {ReservationDetailsDialogComponent} from "./pages/student/reservation-details-dialog/reservation-details-dialog.component";
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "437532304249-udd962otmcipe2jau8i1osbljgje1jhh.apps.googleusercontent.com",
@@ -140,7 +141,8 @@ let gapiClientConfig: NgGapiClientConfig = {
     ManagementOptionsComponent,
     ListLessonsComponent,
     ListTrainingsComponent,
-    SpecificLessonComponent
+    SpecificLessonComponent,
+    ReservationDetailsDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -10,24 +10,24 @@
       <mat-form-field appearance="outline" >
         <mat-label>Elige un curso</mat-label>
         <mat-select>
-          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.course">
-            {{reservation.course}}
+          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.course.name">
+            {{reservation.course.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Elige un tutor</mat-label>
         <mat-select>
-          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.tutor">
-            {{reservation.tutor}}
+          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.tutor.firstName">
+            {{reservation.tutor.firstName}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Elige un tipo de clase</mat-label>
         <mat-select>
-          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.lessonType">
-            {{reservation.lessonType}}
+          <mat-option *ngFor="let reservation of listLessons" [value]="reservation.lessonType.name">
+            {{reservation.lessonType.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -37,9 +37,9 @@
         <mat-list role="list" *ngFor="let reservation of listLessons">
           <mat-list-item class="m-list-item" role="listitem">
             <div class="flex">
-              <h3>{{reservation.course}}</h3>
-              <h3>{{reservation.tutor}}</h3>
-              <h3>{{reservation.lessonType}}</h3>
+              <h3>{{reservation.course.name}}</h3>
+              <h3>{{reservation.tutor.firstName}}</h3>
+              <h3>{{reservation.lessonType.name}}</h3>
               <a mat-button class="mat-button-text btn" color="primary" (click)="navigateToSeeSpecificReserve(reservation.id)" >Detalles</a>
             </div>
           </mat-list-item>
