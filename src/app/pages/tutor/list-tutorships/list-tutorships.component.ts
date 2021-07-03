@@ -21,9 +21,10 @@ export class ListTutorshipsComponent implements OnInit {
   getTutorships(): void{
     this.week = this.getWeek(new Date());
     let start = this.formatDateIsoDate(this.week[0]);
-    let end = this.formatDateIsoDate(this.week[6]);
+    let end = this.formatDateIsoDate(this.week[7]);
     let tutorId = Number(this.route.snapshot.paramMap.get('id'))
-
+    console.log(start);
+    console.log(end);
     this.lessonsApiService.getLessonsByTutorIdAndLessonTypeIdAndInRange
     (tutorId,5,start, end)
       .subscribe((response: any ) =>{
@@ -73,6 +74,7 @@ export class ListTutorshipsComponent implements OnInit {
     while (sunday.setDate(sunday.getDate()+1) && sunday.getDay()!==0) {
       result.push(new Date(sunday).toISOString());
     }
+    result.push(new Date(sunday).toISOString());
     return result;
   }
 }

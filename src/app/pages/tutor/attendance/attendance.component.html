@@ -1,63 +1,62 @@
 <app-main-nav-tutor>
-<h1 style="margin-left: 5%;margin-top: 5%;">
-  Asistencia de los estudiantes
-  <mat-icon aria-hidden="false" aria-label="Example home icon" class="margin:5px">people_alt</mat-icon>
-</h1>
+  <mat-card style="height: 100%">
+    <h1 style="margin-left: 5%;margin-top: 2%;">
+      Asistencia de los estudiantes
+      <mat-icon aria-hidden="false" aria-label="Example home icon" class="margin:5px">people_alt</mat-icon>
+    </h1>
+    <mat-card-content>
 
-<!-- <mat-grid-list cols="12" rowHeight="1:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-<<<<<<< HEAD
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z3">
 
-=======
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="assistance">
 
->>>>>>> feature/components-lucas
-</mat-grid-list> -->
+          <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox (change)="$event ? masterToggle() : null"
+                              [checked]="selection.hasValue() && isAllSelected()"
+                              [indeterminate]="selection.hasValue() && !isAllSelected()"
+                              [aria-label]="checkboxLabel()">
+              </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? toggleCheckbox(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z3">
+        <!-- position column -->
 
-  <!-- Checkbox Column -->
-  <ng-container matColumnDef="assistance">
+        <!-- name column -->
+        <ng-container matColumnDef="fullName">
+          <th mat-header-cell *matHeaderCellDef> Alumno</th>
+          <td mat-cell *matCellDef="let element"> {{element.student.firstName}} {{element.student.lastName}} </td>
+        </ng-container>
 
-    <th mat-header-cell *matHeaderCellDef> Asistencia </th>
-<!--    <mat-checkbox (change)="$event ? masterToggle() : null"
-                    [checked]="selection.hasValue() && isAllSelected()"
-                    [indeterminate]="selection.hasValue() && !isAllSelected()">
-      </mat-checkbox>-->
-    <td mat-cell *matCellDef="let row">
-      <mat-checkbox (click)="$event.stopPropagation()"
-                    (change)="$event ? toggleCheckbox(row) : null"
-                    [checked]="selection.isSelected(row.assistance)">
-      </mat-checkbox>
-    </td>
-  </ng-container>
+        <!-- lastname column -->
+        <ng-container matColumnDef="mail">
+          <th mat-header-cell *matHeaderCellDef> Correo electronico</th>
+          <td mat-cell *matCellDef="let element"> {{element.student.mail}} </td>
+          <!--    <td mat-cell *matCellDef="let element"> {{element.code}} </td>-->
+        </ng-container>
 
-  <!-- position column -->
+        <!-- Assistance column -->
+        <!--  <ng-container matColumnDef="assistance">
+            <th mat-header-cell *matHeaderCellDef> Asistencia </th>
+            <td mat-cell *matCellDef="let element"> {{element.assistance}} </td>
+          </ng-container>-->
 
-  <!-- name column -->
-  <ng-container matColumnDef="firstName">
-    <th mat-header-cell *matHeaderCellDef> Nombre </th>
-    <td mat-cell *matCellDef="let element"> {{element.student.firstName}} </td>
-  </ng-container>
-
-  <!-- lastname column -->
-  <ng-container matColumnDef="lastName">
-    <th mat-header-cell *matHeaderCellDef> Apellido </th>
-    <td mat-cell *matCellDef="let element"> {{element.student.lastName}} </td>
-<!--    <td mat-cell *matCellDef="let element"> {{element.code}} </td>-->
-  </ng-container>
-
-  <!-- Assistance column -->
-<!--  <ng-container matColumnDef="assistance">
-    <th mat-header-cell *matHeaderCellDef> Asistencia </th>
-    <td mat-cell *matCellDef="let element"> {{element.assistance}} </td>
-  </ng-container>-->
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-      (click)="toggleCheckbox(row)"></tr>
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-</table>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)"></tr>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </table>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+      <a mat-button class="mat-button-text " color="primary">Cancelar</a>
+      <a mat-button class="mat-button-text" color="primary">Guardar</a>
+    </mat-card-actions>
+  </mat-card>
 </app-main-nav-tutor>

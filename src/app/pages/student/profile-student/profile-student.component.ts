@@ -13,6 +13,7 @@ export class ProfileStudentComponent implements OnInit {
   studentId!: number;
   isEditedMode: Boolean = true;
   studentData:any;
+  isLoaded: boolean = false;
 
   constructor(private studentsApi: StudentApiService, private router: Router, private route: ActivatedRoute) {
 
@@ -20,6 +21,7 @@ export class ProfileStudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.retrieveStudent();
+
   }
 
   retrieveStudent(): void {
@@ -29,6 +31,7 @@ export class ProfileStudentComponent implements OnInit {
       .subscribe((response:any) => {
         this.studentData = _.cloneDeep(response);
         console.log(this.studentData);
+        this.isLoaded = true;
       });
   }
 }

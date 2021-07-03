@@ -12,6 +12,8 @@ import * as _ from 'lodash';
 export class MainContentComponent implements OnInit {
   coordinatorData!: Coordinator;
   coordinatorId!: number;
+  isLoaded: boolean = false;
+
   constructor(private coordinatorsApi: CoordinatorService, private router: Router,private route: ActivatedRoute) {
     this.coordinatorId= Number(this.route.snapshot.paramMap.get('id'));
   }
@@ -25,7 +27,7 @@ export class MainContentComponent implements OnInit {
     this.coordinatorsApi.getCoordinatorById(this.coordinatorId)
       .subscribe((response:Coordinator) => {
         this.coordinatorData = _.cloneDeep(response);
-        console.log(this.coordinatorData);
+        this.isLoaded = true;
       });
   }
   navigateToManagement(){

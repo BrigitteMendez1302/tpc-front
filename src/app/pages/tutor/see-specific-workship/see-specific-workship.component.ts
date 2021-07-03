@@ -3,7 +3,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {LessonApiBriService} from "../../../services/lesson-api-bri.service";
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {GoogleSignInService} from "../../../services/google-sign-in.service";
-import {CalendarService} from "../../../services/calendar.service";
 
 @Component({
   selector: 'app-see-specific-workship',
@@ -21,6 +20,7 @@ export class SeeSpecificWorkshipComponent implements OnInit {
   isoStartDate:any;
   isoEndDate:any;
   gapi: any;
+  isLoaded: boolean = false;
   user: gapi.auth2.GoogleUser | undefined;
 
   constructor(private router: Router, private route: ActivatedRoute,
@@ -34,13 +34,10 @@ export class SeeSpecificWorkshipComponent implements OnInit {
     this.lessonsApiService.getLessonById(lessonId)
       .subscribe((response:any)=>{
         this.tutorship = response;
-        console.log(this.tutorship);
         this.date = this.formatDateIsoDate(this.tutorship.startDate);
         this.startTime = this.formatNormalTime(this.tutorship.startDate);
         this.endTime = this.formatNormalTime(this.tutorship.endDate);
-        console.log("Date ", this.date);
-        console.log("Start time", this.startTime);
-        console.log("End time", this.endTime);
+        this.isLoaded = true;
       })
   }
 
@@ -115,62 +112,6 @@ export class SeeSpecificWorkshipComponent implements OnInit {
       +'/'+newDate.getFullYear().toString();
   };
 
-  authenticate() {
-    this.gapi.load("client:auth2", function() {
-      // @ts-ignore
-      gapi.auth2.init({client_id: "437532304249-udd962otmcipe2jau8i1osbljgje1jhh.apps.googleusercontent.com"});
-    });
-    return this.gapi.auth2.getAuthInstance()
-      .signIn({scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events"})
-      .then(function() { console.log("Sign-in successful"); },
-        function(err: any) { console.error("Error signing in", err); }).then(this.loadClient())
-      .then(this.execute);
-  }
-  loadClient() {
-    this.gapi.client.setApiKey("AIzaSyAu6PEqcKVvXdFwV-EnFKhOMlHVjNrb9Z4");
-    return this.gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
-      .then(function() { console.log("GAPI client loaded for API"); },
-        function(err:any) { console.error("Error loading GAPI client for API", err); });
-  };
-
-  execute() {
-    return this.gapi.client.calendar.events.insert({
-      "calendarId": "primary",
-      "conferenceDataVersion": 1,
-      "sendNotifications": true,
-      "sendUpdates": "all",
-      "resource": {
-        "conferenceData": {
-          "createRequest": {
-            "requestId": "sample123",
-            "conferenceSolutionKey": {
-              "type": "hangoutsMeet"
-            }
-          }
-        },
-        "end": {
-          "dateTime": "2021-06-24T12:43:47.805Z"
-        },
-        "start": {
-          "dateTime": "2021-06-24T06:43:47.805Z"
-        },
-        "anyoneCanAddSelf": true,
-        "description": "reunion de prueba",
-        "attendees": [
-          {"email": "brigittemmendezpastor@gmail.com"},
-          {"email": "julissakarol2012@gmail.com"},
-          {"email": "lucas.moreno.olivos@gmail.com"},
-        ],
-        "summary": "la reu de patroness"
-      }
-    })
-      .then(function(response:any) {
-          // Handle the results here (response.result has the parsed body).
-          console.log("Response", response);
-        },
-        function(err:any) { console.error("Execute error", err); });
-  };
-
   openDialog() {
     const dialogRef = this.dialog.open(DialogDataExampleDialog,
       {
@@ -202,7 +143,6 @@ export class SeeSpecificWorkshipComponent implements OnInit {
   };
 
 }
-
 
 export interface TutorshipData {
   date: Date;

@@ -13,6 +13,8 @@ import * as _ from 'lodash';
 export class MainTutorComponent implements OnInit {
   tutorData!: TutorTpc;
   tutorId!: number;
+  isLoaded: boolean = false;
+
   constructor(private tutorsApi: TutorApiService, private router: Router, private route: ActivatedRoute) {
     this.tutorId= Number(this.route.snapshot.paramMap.get('id'));
   }
@@ -26,7 +28,7 @@ export class MainTutorComponent implements OnInit {
     this.tutorsApi.getUserById(this.tutorId)
       .subscribe((response:TutorTpc) => {
         this.tutorData = _.cloneDeep(response);
-        console.log(this.tutorData);
+        this.isLoaded = true;
       });
   }
   navigateToSeeTutorShips(): void {

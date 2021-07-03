@@ -7,3 +7,12 @@ mat-grid-tile {
   background: lightblue;
 }
 
+.actions{
+  margin-left: 4%;
+  margin-right: 4%;
+  display: flex;
+  justify-content: flex-end;
+}
+.actions a{
+  color: #0A1128;
+}

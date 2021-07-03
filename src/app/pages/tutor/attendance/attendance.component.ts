@@ -14,7 +14,7 @@ import {MatPaginator} from "@angular/material/paginator";
   styleUrls: ['./attendance.component.css'],
 })
 export class AttendanceComponent implements OnInit, AfterViewInit{
-  displayedColumns: string[] = ['firstName', 'lastName', 'assistance'];
+  displayedColumns: string[] = ['assistance', 'fullName', 'mail'];
   dataSource = new MatTableDataSource<any>();
   selection = new SelectionModel<any>(true, []);
   @ViewChild(MatPaginator) paginator: any;
@@ -52,13 +52,18 @@ export class AttendanceComponent implements OnInit, AfterViewInit{
     }
   }
 
-
   toggleCheckbox(row: any) {
     this.selection.toggle(row);
     row.assistance = !row.assistance;
   }
 
-  //Esto es para marcar los checkboxs si la data viene con true en asistió en algun estudiante
+  checkboxLabel(row?: any): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+  }
+
   ngOnInit() {
     this.getAllStudents();
     this.dataSource.data.forEach(p => {

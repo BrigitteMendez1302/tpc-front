@@ -13,8 +13,12 @@ export class SeeLessonOptionsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateToSeeComments(): void {
-    this.router.navigate([`coordinator/102/lessons/1/reports/options/seecomments`])
-      .then(() => console.log('Navigated to see more about the tutorship'));
+  navigateToSeeLessons(): void {
+    this.router.navigate(['lessons'], {relativeTo: this.route})
+      .then(() => console.log('Navigated to see all lessons'));
+  }
+  navigateToSeeTrainings(): void {
+    this.router.navigate(['trainings'], {relativeTo: this.route})
+      .then(() => console.log('Navigated to see all lessons'));
   }
 }

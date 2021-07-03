@@ -1,12 +1,11 @@
-<app-main-nav-student>
+<app-main-nav-student *ngIf ="isLoaded">
 <div>
   <div class="container">
     <div class="greeting">
       <div>
-        <h1 style="font-weight: 900; font-size:40px;">Hola Josias Olaya</h1>
+        <h1 style="font-weight: 900; font-size:40px;">Hola {{studentData.firstName}}</h1>
         <h3 style="font-size:30px;">¿Qué deseas hacer hoy?</h3>
       </div>
-      <img src="https://sanagustin.gps.zeusintranet.com/images/classroom-2.svg" class="img-main" alt="">
     </div>
     <div class="buttons">
       <a mat-button class="mat-button-text btn btn-twol" color="primary" >INSCRIBIRSE<br>A UNA TUTORIA</a>

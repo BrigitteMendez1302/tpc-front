@@ -36,7 +36,6 @@ export class ListLessonsComponent implements OnInit, AfterViewInit {
     this.lessonsApi.getAllLessons().subscribe((response: any) => {
       this.dataSource.data = response.content;
     });
-
   }
 
   applyFilter(event: Event): void {
@@ -46,14 +45,6 @@ export class ListLessonsComponent implements OnInit, AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
     this.isFiltering = !!filterValue;
-  }
-  navigateToAddStudent(): void {
-    this.router.navigate(['/students/new'])
-      .then(() => console.log('Navigated to New Student'));
-  }
-  navigateToEditStudent(studentId: number): void {
-    this.router.navigate([`/students/${studentId}`])
-      .then(() => console.log('Navigated to Edit Student'));
   }
 
   formatDateIsoDate(paramDate:any){
